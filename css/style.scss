@@ -1,0 +1,310 @@
+// typos
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+// mixins + variables
+@import 'variables';
+@import 'mixins';
+@mixin font-face( $size, $weight, $style, $color ) {
+    font-family: 'Source Sans Pro', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap") format("woff2");
+    font-size: $size;
+    font-weight: $weight;
+    font-style : $style;
+    color: $color;
+}
+
+// reset CSS et generalites
+@import 'general';
+
+// ---------------------------- navbar ----------------------------
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.navbar-toggler {
+    background: none;
+    z-index: 1;
+    .hamburger-logo {
+        width: 20px;
+        height: 20px;
+        rect {
+            @include transition(.6s);
+            transform-origin: center;
+            fill: rgb(255, 255, 255);
+        }
+    } 
+    .hamburger-logo--open {
+        rect {
+            fill: #000;
+        }
+        rect:nth-child(1) {
+            transform: rotate(135deg) translate(0%,40%);
+        }
+        rect:nth-child(2) {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        rect:nth-child(3) {
+            transform: rotate(-135deg) translate(-0%,-40%);
+        }
+    }
+}
+
+.overlayer {
+    @include flex(center, row);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: none;
+    &--open {
+        display: flex;
+    }
+}
+.navbar-section {
+    @include flex(space-between, row);
+    @include gutter();
+    position: relative;
+    height: $navbar-height;
+    background: linear-gradient(to right, rgb(17, 88, 154), rgb(3, 169, 245));
+    z-index: 2;
+    .reezocar-logo {
+        width: 236px;
+        height: 33px;
+    }
+    .reezocar-logo--close {
+        path {
+            fill: #fff;
+        }
+    }
+    .reezocar-logo--open {
+        path {
+            fill: #313131;
+        }
+        path:nth-last-child(-n+2) {
+            fill: #F29400;
+        }
+    }
+}
+.navbar-account {
+    @include font-face( 25px, 400, normal, #fff );
+    background: none;
+    &.desktop-only {
+        @include button;
+        @include font-face( 14px, 600, normal, #fff );
+        height: 45px;
+        padding: 0 25px;
+    }
+}
+
+.sub-navbar {
+    @include flex(space-between, row);
+    @include transition(.3s);
+    flex-direction: column;
+    position: absolute;
+    bottom: $navbar-height;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - $navbar-height);
+    background-color: #fff;
+    z-index: 1;
+    &--open {
+        bottom: calc(-100vh + $navbar-height);
+    }
+    nav {
+        width: 100%;
+    }
+}
+.nav-item, .dropdown {
+    @include font-face( inherit, 400, normal, $primary-color );
+}
+.nav-link {
+    @include gutter();
+    @include flex(flex-start, row);
+    gap: 10px;
+    height: 70px;
+    text-decoration: none;
+}
+
+.nav-icon {
+    @include flex(center, row);
+    width: 30px;
+    height: 100%;
+    i {
+        font-size: 24px;
+    }
+}
+.dropdown-toggle {
+    @include gutter();
+    @include flex(space-between, row);
+    text-decoration: none;
+    .nav-link {
+        padding: 0;
+    }
+    .fa-chevron-down {
+        @include transition(.3s);
+        &--open {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(.4s);
+    .nav-link {
+        height: 50px;
+    }
+    &--open {
+        max-height: 100px;
+    }
+}
+
+.navbar-contact {
+    width: 100%;
+    height: 87px;
+    background-color: $secondary-color;
+    @include flex(space-evenly, row);
+    .contact {
+        @include flex(center, column);
+        @include transition(.3s);
+        gap: 10px;
+        text-decoration: none;
+        @include font-face( 12px, 400, normal, #fff );
+        i {
+            font-size: 35px;
+        }
+    }
+}
+
+// hover
+.dropdown-toggle:hover, .nav-item:hover, .active {
+    @include transition(.3s);
+    background: $primary-color;
+    color: #fff;
+}
+.contact:hover {
+    color: $primary-color;
+}
+
+// section
+section {
+    .title {
+        font-size: $title;
+    }
+    .subtitle {
+        font-size: $subtitle;
+    }
+}
+#recherche {
+    color: #fff;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    padding: calc($navbar-height + 56px) $gutter 0;
+    .title {
+        margin: 0 0 40px 0;
+    }
+    h1 {
+        font-size: 26px;
+        font-weight: 700;
+        max-width: 263px;
+        margin: 10px auto;
+    }
+    p {
+        font-weight: 300;
+        font-size: 14px;
+        margin: 0 auto;
+        a {
+            font-weight: 500;
+        }
+    }
+    .search-form {
+        @include flex(center, row);
+    }
+    .input-group {
+        @include flex(flex-start, row);
+        width: 100%;
+        box-shadow: rgb(0 0 0 / 50%) 0px 4px 15px;
+        border-radius: $border-radius;
+        max-width: 665px;
+    }
+    .search-input {
+        @include input;
+        padding: 0 70px 0 10px;
+        height: 55px;
+        border-radius: $border-radius 0 0 $border-radius;
+        width: calc(100% - 55px);
+    }
+    .search-button {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+        border-radius: 0 $border-radius $border-radius 0;
+        background: #fff;
+        color: $primary-color;
+    }
+    .voitures {
+        position: relative;
+        top: 5vw;
+        width: 100%;
+    }
+}
+
+// ---------------------------- tablette ----------------------------
+@media screen and (min-width: 768px)  {
+    #recherche {
+        h1 {
+            font-size: 36px;
+            max-width: fit-content;
+        }
+        p {
+            font-size: 18px;
+            max-width: 665px;
+        }
+    }
+}
+
+// ---------------------------- desktop ----------------------------
+@media screen and (min-width: 1025px) {
+    .navbar {
+        display: flex;
+    }
+    .dropdown {
+        color: #fff;
+        position: relative;
+    }
+    .dropdown-toggle {
+        gap: 10px;
+    }
+    .dropdown-menu {
+        position: absolute;
+        bottom: -100px;
+        left: -10px;
+        opacity: 0;
+        overflow: visible;
+        width: 170px;
+        max-height: max-content;
+        background-color: #fff;
+        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+        border-radius: 10px;
+        .nav-item {
+            @include font-face( 16px, 500, normal, #000 );
+        }
+        &--open {
+            opacity: 1;
+        }
+    }
+    .nav-item {
+        @include font-face( 16px, 500, normal, #fff );
+        @include flex(center, row);
+    }
+
+    // hover
+    .dropdown-toggle:hover, .nav-item:hover, .active {
+        background: none;
+    }
+}

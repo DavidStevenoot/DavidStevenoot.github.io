@@ -1,0 +1,36 @@
+@mixin flex($alignement, $direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $alignement;
+    align-items: center;
+}
+@mixin gutter() {
+    padding: 0 $gutter;
+}
+@mixin transition($duration) {
+    transition: all $duration ease;
+}
+@mixin button {
+    background-color: $primary-color;
+    transition: all .3s ease;
+    border-radius: 10px;
+    &:hover {
+        background-color: $hover-button;
+    }
+}
+@mixin input {
+    font-size: 14px;
+    color: $primary-color;
+}
+
+// media queries
+// @mixin desktop-only {
+//     @media screen and (min-width: map-get($breakpoints, desktop-up)){
+//         display: none;
+//     }
+// }
+// @mixin mobile-only {
+//     @media screen and (max-width: map-get($breakpoints, desktop-up)){
+//         display: none;
+//     }
+// }
