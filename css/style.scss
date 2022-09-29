@@ -117,7 +117,6 @@ header {
         @include button;
         display: none;
         font-size: 14px;
-        padding: 0 25px;
         @include media(large) {
             display: flex;
         }
@@ -459,6 +458,54 @@ section {
         }
         p {
             margin: 10px 0;
+        }
+    }
+    .occasion {
+        @include flex(center, row);
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 50px;
+    }
+    .video-occasion {
+        flex-basis: 100%;
+        position: relative;
+        height: 0;
+        padding-bottom: 57%;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include media(large) {
+                padding-bottom: 28%;
+            }
+        }
+        @include media(large) {
+            flex-basis: 50%;
+        }
+    }
+    .text-occasion {
+        display: none;
+        flex-basis: calc(50% - 40px);
+        h3 {
+            font-size: 26px;
+            color: $primary-color;
+        }
+        p {
+            font-size: 16px;
+            color: $tertiary-color;
+        }
+        @include media(large) {
+            @include flex(flex-start, row);
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+    }
+    .btn-occasion {
+        a {
+            @include button();
+            color: #fff;
         }
     }
 }

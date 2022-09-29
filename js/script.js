@@ -6,13 +6,13 @@ overLayer = document.querySelector(".overlayer"),
 hamburgerLogo = document.querySelector(".hamburger-logo");
 
 // if (window.matchMedia("(max-width: 1024px)").matches) {
-    // hamburger.addEventListener('click', event => {
+    hamburger.addEventListener('click', event => {
         // déplacer la layout supérieure
-        // overLayer.classList.toggle("overlayer--open");
+        overLayer.classList.toggle("overlayer--open");
         // animation hamburger
-        // hamburgerLogo.classList.toggle("hamburger-logo--open");
+        hamburgerLogo.classList.toggle("hamburger-logo--open");
         // toggle navbar
-        // subNavbar.classList.toggle("sub-navbar--open");
+        subNavbar.classList.toggle("sub-navbar--open");
         // fermer la dropdown et basculer la flèche a la fermeture de la navbar
         // let dropdownOpen = dropdownMenu.classList.contains('dropdown-menu--open') ? true : false;
         // let arrowOpen = arrow.classList.contains('fa-chevron-down--open') ? true : false;
@@ -21,7 +21,7 @@ hamburgerLogo = document.querySelector(".hamburger-logo");
             //     dropdownMenu.classList.remove("dropdown-menu--open");
             //     arrow.classList.remove("fa-chevron-down--open");
             // }
-    // });
+    });
 // }
     
 // toggle "nos agences"
