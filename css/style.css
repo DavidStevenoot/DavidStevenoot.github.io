@@ -350,6 +350,12 @@ section .subtitle {
 section .subtitle a {
   font-weight: 600;
 }
+@media (min-width: 600px) {
+  section .subtitle {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+}
 section .primary-color {
   color: rgb(17, 88, 154);
 }
@@ -482,6 +488,11 @@ section .primary-color {
 }
 #pourquoi .logo {
   font-size: 50px;
+  width: 50px;
+}
+#pourquoi .logo img {
+  width: 100%;
+  vertical-align: bottom;
 }
 #pourquoi .fa-facebook {
   color: #1877F2;
@@ -522,10 +533,12 @@ section .primary-color {
   justify-content: center;
   align-items: center;
   gap: 18px;
+  margin-top: 50px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   #pourquoi .raisons {
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 #pourquoi .choices, #pourquoi .controls, #pourquoi .satisfy {
@@ -533,8 +546,13 @@ section .primary-color {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 3%;
+  gap: 30px;
+}
+@media (min-width: 1025px) {
+  #pourquoi .choices, #pourquoi .controls, #pourquoi .satisfy {
+    flex-wrap: wrap;
+    width: 340px;
+  }
 }
 #pourquoi .controls {
   flex-direction: row-reverse;
@@ -547,13 +565,17 @@ section .primary-color {
     flex-basis: 220px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   #pourquoi .img-raison {
     flex-basis: 100%;
+    height: 280px;
   }
 }
 #pourquoi .img-raison img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #pourquoi .text-raison {
   flex-basis: calc(100% - 128px);
@@ -565,7 +587,7 @@ section .primary-color {
     flex-basis: calc(100% - 248px);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   #pourquoi .text-raison {
     flex-basis: 100%;
   }
