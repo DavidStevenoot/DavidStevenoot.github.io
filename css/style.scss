@@ -468,18 +468,9 @@ section {
     }
     .video-occasion {
         flex-basis: 100%;
-        position: relative;
-        height: 0;
-        padding-bottom: 57%;
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            @include media(large) {
-                padding-bottom: 28%;
-            }
         }
         @include media(large) {
             flex-basis: 50%;

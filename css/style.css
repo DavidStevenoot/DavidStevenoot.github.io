@@ -614,21 +614,10 @@ section .primary-color {
 }
 #pourquoi .video-occasion {
   flex-basis: 100%;
-  position: relative;
-  height: 0;
-  padding-bottom: 57%;
 }
 #pourquoi .video-occasion iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-}
-@media (min-width: 1025px) {
-  #pourquoi .video-occasion iframe {
-    padding-bottom: 28%;
-  }
 }
 @media (min-width: 1025px) {
   #pourquoi .video-occasion {
