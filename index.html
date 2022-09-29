@@ -11,14 +11,14 @@
 <body>
     <header>
         <div class="navbar-section">
-            <button class="navbar-toggler mobile-only" type="button">
+            <button class="navbar-toggler" type="button">
                 <svg class="hamburger-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="200" height="30" rx="15"/>
                     <rect y="85" width="200" height="30" rx="15"/>
                     <rect y="170" width="200" height="30" rx="15"/>
                 </svg>                             
             </button>
-            <div class="overlayer mobile-only">
+            <div class="overlayer">
                 <a class="brand" href="#">
                     <svg class="reezocar-logo reezocar-logo--open" viewBox="0 0 160 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.43237 10.1085C9.11552 10.0373 8.7743 10.0136 8.35996 10.0136C5.45957 10.0136 3.85094 11.6755 3.85094 14.572V23.1189H0V6.33363H3.77782V8.92146C4.77712 7.14084 6.62947 6.19118 8.48182 6.19118C8.82305 6.19118 9.1399 6.21492 9.408 6.2624L9.43237 10.1085Z"/>
@@ -48,10 +48,10 @@
                     <path d="M151.917 11.6755L151.478 8.779C151.186 6.87968 148.481 6.19117 146.263 6.19117C144.045 6.19117 141.339 6.85593 141.047 8.779L140.608 11.6755C139.511 12.1978 138.756 13.2662 138.78 14.5007C138.78 15.3792 139.17 16.1864 139.804 16.7562L139.828 19.0829C139.828 19.2016 139.901 19.2965 140.023 19.2965H142.144C142.241 19.2965 142.339 19.2016 142.339 19.0829V17.6584L146.287 17.6346L150.235 17.6584V19.0829C150.235 19.2016 150.309 19.2965 150.43 19.2965H152.551C152.648 19.2965 152.746 19.2016 152.746 19.0829L152.77 16.7562C153.404 16.1864 153.794 15.3792 153.794 14.5007C153.769 13.2662 153.014 12.1978 151.917 11.6755ZM141.486 15.6641C140.803 15.6641 140.267 15.1417 140.267 14.477C140.267 13.8122 140.803 13.2899 141.486 13.2899C142.168 13.2899 142.704 13.8122 142.704 14.477C142.704 15.118 142.168 15.6403 141.486 15.6641ZM142.314 11.3431L142.655 9.01642C142.753 8.35165 144.41 7.8056 146.263 7.8056C148.115 7.8056 149.772 8.3754 149.87 9.01642L150.211 11.3431C150.211 11.3431 146.945 11.3194 146.263 11.3194C145.58 11.3431 142.314 11.3431 142.314 11.3431ZM151.04 15.6641C150.357 15.6641 149.821 15.118 149.821 14.477C149.821 13.8122 150.382 13.2899 151.04 13.2899C151.722 13.2899 152.258 13.836 152.258 14.477C152.283 15.118 151.722 15.6641 151.04 15.6641Z"/>
                 </svg>
             </a>
-            <nav class="desktop-only">
+            <nav class="navbar-desktop">
                 <ul class="navbar">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" role="button">
+                        <a class="dropdown-toggle" href="#">
                             <div class="nav-link">
                                 Nos agences
                             </div>
@@ -83,7 +83,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="sub-navbar mobile-only">
+            <div class="sub-navbar">
                 <nav>
                     <ul class="navbar">
                         <li class="nav-item active">
@@ -95,7 +95,7 @@
                             </a>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" role="button">
+                            <a class="dropdown-toggle" href="#">
                                 <div class="nav-link">
                                     <div class="nav-icon">
                                         <i class="fa-solid fa-location-dot"></i>
@@ -168,14 +168,15 @@
                     </a>
                 </div>
             </div>
-            <button class="navbar-account mobile-only" href="#">
+            <a class="account-mob" href="#">
                 <i class="fa-regular fa-user"></i>
-            </button>
-            <button class="navbar-account desktop-only" href="#">
+            </a>
+            <a class="account-desktop" href="#">
                 Connexion
-            </button>
+            </a>
         </div>
     </header>
+
     <main>
         <section id="recherche">
             <div class="title">
@@ -190,32 +191,98 @@
                     </button>
                 </div>
             </form>
-            <img src="img/img01_mobile.png" alt="voitures" class="voitures mobile-only">
-            <img src="img/img01_desktop.png" alt="voitures" class="voitures desktop-only">
+            <img src="img/cars01.png" alt="voitures" class="voitures carMob">
+            <img src="img/cars02.png" alt="voitures" class="voitures carLaptop">
+            <img src="img/cars03.png" alt="voitures" class="voitures carDesktop">
         </section>
         <section id="pourquoi">
-            <h2><span class="primary-color">Pourquoi</span> choisir Reezocar ?</h2>
+            <h2 class="text-center"><span class="primary-color">Pourquoi</span> choisir Reezocar ?</h2>
+            <p class="subtitle text-center">Profitez de l'expérience de nos conseillers et de la garantie d'un achat en toute sécurité.</p>
+            <div class="avis">
+                <article id="fb-avis">
+                    <div class="logo">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="avis-number">
+                        <div class="moyenne">
+                            4.1
+                        </div>
+                        <div class="total-avis">
+                            sur 384 avis
+                        </div>
+                    </div>
+                </article>
+                <article id="google-avis">
+                    <div class="logo">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div class="avis-number">
+                        <div class="moyenne">
+                            4.1
+                        </div>
+                        <div class="total-avis">
+                            sur 1327 avis
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="raisons">
+                <article class="choices">
+                    <div class="img-raison">
+                        <img src="img/raison03.png" alt="carte europe">
+                    </div>
+                    <div class="text-raison">
+                        <h3>Le plus grand choix d'annonces auto en Europe</h3>
+                        <p>Nous vous aidons à trouver la voiture de vos rêves parmi la plus grande sélection d’annonces de véhicules d’Europe. Comparez les prix, les finitions, les motorisations et achetez en toute sécurité.</p>
+                    </div>
+                </article>
+                <article class="controls">
+                    <div class="img-raison">
+                        <img src="img/raison02.png" alt="vehicules controlés">
+                    </div>
+                    <div class="text-raison">
+                        <h3>Véhicules controlés, révisés et garantis</h3>
+                        <p>Nos équipes vérifient l'état de votre nouvelle voiture, la révisent et la préparent avant la livraison. Vous bénéficiez de l’expertise Reezocar et d’une garantie extensible pour votre véhicule.</p>
+                    </div>
+                </article>
+                <article class="satisfy">
+                    <div class="img-raison">
+                        <img src="img/raison01.png" alt="satisfait ou remboursé">
+                    </div>
+                    <div class="text-raison">
+                        <h3>Vous êtes satisfait ou remboursé</h3>
+                        <p>Votre voiture certifiée vous permet d’essayer votre nouveau véhicule durant 15 jours ou 1000 km, chez vous et sans contraintes. Si vous souhaitez changer d’avis, nous nous engageons à vous rembourser intégralement le véhicule.</p>
+                    </div>
+                </article>
+            </div>
         </section>
         <section id="offres">
-            <h2><span class="primary-color">Les offres</span> du moment</h2>
+            <h2 class="text-center"><span class="primary-color">Les offres</span> du moment</h2>
+            <p class="subtitle text-center">Profitez de prix réduits et des offres d'achat de véhicules les plus interessantes du marché.</p>
         </section>
         <section id="avis">
-            <h2><span class="primary-color">L'avis des</span> clients Reezocar</h2>
+            <h2 class="text-center"><span class="primary-color">L'avis des</span> clients Reezocar</h2>
+            <p class="subtitle text-center">Ce sont les clients qui parlent le mieux de l'expérience d'achat en ligne de Reezocar, voici leurs témoignages.</p>
         </section>
         <section id="concessions">
-            <h2><span class="primary-color">Nos</span> concessions</h2>
+            <h2 class="text-center"><span class="primary-color">Nos</span> concessions</h2>
+            <p class="subtitle text-center">Reezocar est proche de vous, venez rencontrer votre conseiller et profiter de l’expérience d’achat bien confortablement assis dans nos locaux.</p>
         </section>
         <section id="magazine">
-            <h2><span class="primary-color">Le magazine</span> auto</h2>
+            <h2 class="text-center"><span class="primary-color">Le magazine</span> auto</h2>
+            <p class="subtitle text-center">A la recherche de <a href="#">conseils d'expert</a>, de toute <a href="#">l'actualité automobile</a>, de <a href="#">comparatifs</a> et <a href="#">d'essais</a> des nouveaux modèles ? Notre <a href="#">Magazine auto</a> est là pour vous guider.</p>
         </section>
         <section id="populaire">
-            <h2><span class="primary-color">Marques et</span> modèles populaires</h2>
+            <h2 class="text-center"><span class="primary-color">Marques et</span> modèles populaires</h2>
+            <p class="subtitle text-center">Les modèles les plus demandés par nos clients, parcourez le catalogue des constructeurs automobile.</p>
         </section>
         <section id="contact">
-            <h2><span class="primary-color">Contactez</span>-nous</h2>
+            <h2 class="text-center"><span class="primary-color">Contactez</span>-nous</h2>
+            <p class="subtitle text-center">Parlez avec votre conseiller, définissez ensemble votre projet automobile ou posez toutes vos questions, nous sommes à votre écoute.</p>
         </section>
         <section id="faq">
-            <h2><span class="primary-color">Foire aux</span> questions</h2>
+            <h2 class="text-center"><span class="primary-color">Foire aux</span> questions</h2>
+            <p class="subtitle text-center">Vous vous posez encore des questions ? C'est normal ! Nous avons des réponses, laissez-nous vous guider.</p>
         </section>
         <footer>
 

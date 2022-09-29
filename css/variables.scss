@@ -5,6 +5,13 @@ $hover-button: rgb(14, 72, 125);
 
 $navbar-height: 64px;
 $gutter: 20px;
-$title: 38px;
-$subtitle: 18px;
+$title: 24px;
+$subtitle: 14px;
 $border-radius: 10px;
+
+$breakpoints: (
+  extrasmall : 480px,
+  small : 600px,
+  medium: 768px,
+  large : 1025px
+);

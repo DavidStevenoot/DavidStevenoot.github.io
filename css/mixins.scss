@@ -11,9 +11,13 @@
     transition: all $duration ease;
 }
 @mixin button {
+    @include flex(center, row);
     background-color: $primary-color;
     transition: all .3s ease;
     border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    height: 46px;
     &:hover {
         background-color: $hover-button;
     }
@@ -24,13 +28,10 @@
 }
 
 // media queries
-// @mixin desktop-only {
-//     @media screen and (min-width: map-get($breakpoints, desktop-up)){
-//         display: none;
-//     }
-// }
-// @mixin mobile-only {
-//     @media screen and (max-width: map-get($breakpoints, desktop-up)){
-//         display: none;
-//     }
-// }
+@mixin media($keys...) {
+    @each $key in $keys { 
+        @media (min-width: map-get($breakpoints, $key)){
+            @content
+        } 
+    }
+}

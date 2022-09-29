@@ -23,7 +23,15 @@ header {
     width: 100%;
     z-index: 1;
 }
+@include media(large) {
+    .navbar {
+        display: flex;
+    }
+}
 .navbar-toggler {
+    @include media(large){
+        display: none;
+    }
     background: none;
     z-index: 1;
     .hamburger-logo {
@@ -52,6 +60,12 @@ header {
     }
 }
 
+.navbar-desktop {
+    display: none;
+    @include media(large) {
+        display: block;
+    }
+}
 .overlayer {
     @include flex(center, row);
     position: absolute;
@@ -63,6 +77,9 @@ header {
     display: none;
     &--open {
         display: flex;
+    }
+    @include media(large) {
+        display: none;
     }
 }
 .navbar-section {
@@ -89,15 +106,21 @@ header {
             fill: #F29400;
         }
     }
-}
-.navbar-account {
-    @include font-face( 25px, 400, normal, #fff );
-    background: none;
-    &.desktop-only {
+    .account-mob {
+        @include font-face( 25px, 400, normal, #fff );
+        @include media(large) {
+            display: none;
+        }
+    }
+    .account-desktop {
+        @extend .account-mob;
         @include button;
-        @include font-face( 14px, 600, normal, #fff );
-        height: 45px;
+        display: none;
+        font-size: 14px;
         padding: 0 25px;
+        @include media(large) {
+            display: flex;
+        }
     }
 }
 
@@ -118,10 +141,30 @@ header {
     nav {
         width: 100%;
     }
+    @include media(large) {
+        display: none;
+    }
 }
-.nav-item, .dropdown {
-    @include font-face( inherit, 400, normal, $primary-color );
+.navbar {
+    .nav-item, .dropdown-toggle {
+        @include font-face( inherit, 400, normal, $primary-color );
+        @include transition(.3s);
+        &:not(.dropdown-toggle):hover {
+            background: $primary-color;
+            color: #fff;
+        }
+        @include media(large) {
+            color: #fff;
+            &:not(.dropdown-toggle):hover {
+                background: none;
+            }
+        }
+    }
 }
+.dropdown {
+    position: relative;
+}
+
 .nav-link {
     @include gutter();
     @include flex(flex-start, row);
@@ -139,6 +182,7 @@ header {
     }
 }
 .dropdown-toggle {
+    @include transition(.3s);
     @include gutter();
     @include flex(space-between, row);
     text-decoration: none;
@@ -151,6 +195,9 @@ header {
             transform: rotate(180deg);
         }
     }
+    @include media(large) {
+        gap: 10px;
+    }
 }
 
 .dropdown-menu {
@@ -162,6 +209,29 @@ header {
     }
     &--open {
         max-height: 100px;
+    }
+    @include media(large) {
+        position: absolute;
+        bottom: -100px;
+        left: -10px;
+        opacity: 0;
+        overflow: visible;
+        width: 170px;
+        max-height: max-content;
+        background-color: #fff;
+        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+        border-radius: 10px;
+        .nav-item:not(.dropdown-toggle) {
+            @include flex(center, row);
+            color: $tertiary-color;
+            &:hover {
+                color: $tertiary-color;
+                font-weight: 600;
+            }
+        }
+        &--open {
+            opacity: 1;
+        }
     }
 }
 
@@ -182,23 +252,25 @@ header {
     }
 }
 
-// hover
-.dropdown-toggle:hover, .nav-item:hover, .active {
-    @include transition(.3s);
-    background: $primary-color;
-    color: #fff;
-}
-.contact:hover {
-    color: $primary-color;
-}
-
 // section
 section {
-    .title {
+    @include gutter();
+    margin-bottom: 50px;
+    h2 {
         font-size: $title;
+        color: $secondary-color;
+        @include media(small) {
+            font-size: 38px;
+        }
     }
     .subtitle {
         font-size: $subtitle;
+        a {
+            font-weight: 600;
+        }
+    }
+    .primary-color {
+        color: $primary-color;
     }
 }
 #recherche {
@@ -213,6 +285,10 @@ section {
         font-weight: 700;
         max-width: 263px;
         margin: 10px auto;
+        @include media(medium) {
+            font-size: 36px;
+            max-width: fit-content;
+        }
     }
     p {
         font-weight: 300;
@@ -221,16 +297,23 @@ section {
         a {
             font-weight: 500;
         }
+        @include media(medium) {
+            font-size: 18px;
+            max-width: 665px;
+        }
     }
     .search-form {
         @include flex(center, row);
     }
     .input-group {
+        @include transition(.3s);
         @include flex(flex-start, row);
         width: 100%;
-        box-shadow: rgb(0 0 0 / 50%) 0px 4px 15px;
         border-radius: $border-radius;
         max-width: 665px;
+        &:focus-within {
+            box-shadow: rgb(0 0 0 / 50%) 0px 4px 15px;
+        }
     }
     .search-input {
         @include input;
@@ -238,6 +321,7 @@ section {
         height: 55px;
         border-radius: $border-radius 0 0 $border-radius;
         width: calc(100% - 55px);
+        
     }
     .search-button {
         width: 55px;
@@ -250,61 +334,114 @@ section {
     .voitures {
         position: relative;
         top: 5vw;
-        width: 100%;
+        width: calc(100% + 40px);
+        margin: 0 -20px;
+        &.carMob {
+            display: block;
+            @include media(medium, large) {
+                display: none;
+            }
+        }
+        &.carLaptop {
+            display: none;
+            @include media(medium) {
+                display: block;
+            }
+            @include media(large) {
+                display: none;
+            }
+        }
+        &.carDesktop {
+            display: none;
+            @include media(large) {
+                display: block;
+            }
+        }
     }
 }
 
-// ---------------------------- tablette ----------------------------
-@media screen and (min-width: 768px)  {
-    #recherche {
-        h1 {
+#pourquoi {
+    .avis {
+        @include flex(space-evenly, row);
+        margin-top: 50px;
+        article {
+            @include flex(center, row);
+            gap: 10px;
+        }
+    }
+    .logo {
+        font-size: 50px;
+    }
+    .fa-facebook {
+        color: #1877F2;
+    }
+    .avis-number {
+        @include flex(flex-start, column);
+        align-items: baseline;
+        @include media(small) {
+            flex-direction: row;
+        }
+    }
+    .moyenne {
+        font-size: 28px;
+        color: $secondary-color;
+        font-weight: 700;
+        @include media(small) {
             font-size: 36px;
-            max-width: fit-content;
+        }
+    }
+    .total-avis {
+        font-size: 14px;
+        @include media(small) {
+            font-size: 18px;
+        }
+    }
+    .raisons {
+        @include flex(center, column);
+        gap: 18px;
+        @include media(medium) {
+            flex-direction: row;
+        }
+    }
+    .choices, .controls, .satisfy {
+        @include flex(center, row);
+        flex-wrap: wrap;
+        gap: 3%;
+    }
+    .controls {
+        flex-direction: row-reverse;
+    }
+    .img-raison {
+        flex-basis: 110px;
+        @include media(small) {
+            flex-basis: 220px;
+        }
+        @include media(medium) {
+            flex-basis: 100%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .text-raison {
+        flex-basis: calc(100% - 128px);
+        font-size: 14px;
+        @include media(small) {
+            font-size: 16px;
+            flex-basis: calc(100% - 248px);
+        }
+        @include media(medium) {
+            flex-basis: 100%;
+        }
+        h3 {
+            color: $secondary-color;
+            font-size: 18px;
+            @include media(small) {
+                font-size: 24px;
+            }
         }
         p {
-            font-size: 18px;
-            max-width: 665px;
+            margin: 10px 0;
         }
-    }
-}
-
-// ---------------------------- desktop ----------------------------
-@media screen and (min-width: 1025px) {
-    .navbar {
-        display: flex;
-    }
-    .dropdown {
-        color: #fff;
-        position: relative;
-    }
-    .dropdown-toggle {
-        gap: 10px;
-    }
-    .dropdown-menu {
-        position: absolute;
-        bottom: -100px;
-        left: -10px;
-        opacity: 0;
-        overflow: visible;
-        width: 170px;
-        max-height: max-content;
-        background-color: #fff;
-        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
-        border-radius: 10px;
-        .nav-item {
-            @include font-face( 16px, 500, normal, #000 );
-        }
-        &--open {
-            opacity: 1;
-        }
-    }
-    .nav-item {
-        @include font-face( 16px, 500, normal, #fff );
-        @include flex(center, row);
-    }
-
-    // hover
-    .dropdown-toggle:hover, .nav-item:hover, .active {
-        background: none;
     }
 }
