@@ -630,6 +630,7 @@ section .primary-color {
 @media (min-width: 1025px) {
   #pourquoi .video-occasion {
     flex-basis: 50%;
+    padding-bottom: 28%;
   }
 }
 #pourquoi .text-occasion {

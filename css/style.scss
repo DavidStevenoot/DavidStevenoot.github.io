@@ -482,6 +482,7 @@ section {
         }
         @include media(large) {
             flex-basis: 50%;
+            padding-bottom: 28%;
         }
     }
     .text-occasion {
