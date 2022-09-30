@@ -22,4 +22,8 @@ button {
 
 .text-center {
   text-align: center;
+}
+
+main {
+  overflow: hidden;
 }/*# sourceMappingURL=general.css.map */
