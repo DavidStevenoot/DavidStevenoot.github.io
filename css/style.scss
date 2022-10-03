@@ -565,3 +565,60 @@ section {
         }
     }
 }
+
+#avis {
+    .slider-container {
+        article {
+            flex-basis: 100%;
+            @include flex(flex-start, column);
+            align-items: baseline;
+            gap: 15px;
+            padding: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+    }
+    .comments {
+        font-style: italic;
+        font-size: 16px;
+        color: $primary-color;
+    }
+    .signature {
+        @include flex(flex-start,row);
+        align-items: stretch;
+        gap: 15px;
+    }
+    .photo-profil {
+        align-self: flex-start;
+    }
+    .text-profil {
+        @include flex(space-between, row);
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .name-profil {
+        flex-basis: 100%;
+        font-weight: 700;
+        font-size: 18px;
+        color: $primary-color;
+    }
+    .adress-profil {
+        flex-basis: 100%;
+        font-size: 16px;
+        color: $tertiary-color;
+    }
+    .tags-profil {
+        @include flex(flex-start, row);
+        gap: 15px;
+        flex-wrap: wrap;
+        .tag-profil {
+            font-weight: 600;
+            font-size: 12px;
+            color: $primary-color;
+            text-decoration: none;
+            border: 1px solid $primary-color;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    }
+}
