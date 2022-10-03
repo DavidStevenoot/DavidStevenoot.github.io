@@ -504,7 +504,6 @@ section {
     .btn-occasion {
         a {
             @include button();
-            color: #fff;
         }
     }
 }
@@ -568,14 +567,29 @@ section {
 
 #avis {
     .slider-container {
+        margin: 50px 10px 0;
+    }
+    .slider {
+        @include flex(space-between, row);
+        align-items: stretch;
+        gap: 30px;
+        @include media(large) {
+            justify-content: center;
+        }
         article {
-            flex-basis: 100%;
-            @include flex(flex-start, column);
+            flex: 0 0 100%;
+            @include flex(space-between, column);
             align-items: baseline;
             gap: 15px;
-            padding: 15px;
+            padding: 22px;
             box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
             border-radius: 10px;
+            @include media(medium) {
+                flex: 0 0 calc(50% - 15px);
+            }
+            @include media(large) {
+                flex: 0 1 400px;
+            }
         }
     }
     .comments {
@@ -590,6 +604,10 @@ section {
     }
     .photo-profil {
         align-self: flex-start;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
     }
     .text-profil {
         @include flex(space-between, row);
@@ -619,6 +637,56 @@ section {
             border: 1px solid $primary-color;
             padding: 10px 20px;
             border-radius: 10px;
+        }
+    }
+    .pagination {
+        margin-top: 30px;
+        @include flex(center, row);
+        gap: 15px;
+        li {
+            display: block;
+            @include media(medium) {
+                &:nth-last-child(-n+1) {
+                    display: none;
+                }
+            }
+            @include media(large) {
+                &:nth-last-child(-n+2) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .pagination-btn {
+        position: relative;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            background: $primary-color;
+            opacity: .2;
+            border-radius: inherit;
+        }
+    }
+    .active {
+        border-color: $primary-color;
+        &::after {
+            opacity: 1;
+        }
+    }
+    .button-area {
+        margin: 30px 0;
+        a {
+            @include button();
+            width: 250px;
+            margin: auto;
         }
     }
 }

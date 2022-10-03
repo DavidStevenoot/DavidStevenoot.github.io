@@ -152,6 +152,7 @@ header {
   text-decoration: none;
   font-weight: 600;
   padding: 16px 25px;
+  color: #fff;
   display: none;
   font-size: 14px;
 }
@@ -739,17 +740,43 @@ section .primary-color {
   padding: 15px;
 }
 
-#avis .slider-container article {
-  flex-basis: 100%;
+#avis .slider-container {
+  margin: 50px 10px 0;
+}
+#avis .slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+  gap: 30px;
+}
+@media (min-width: 1025px) {
+  #avis .slider {
+    justify-content: center;
+  }
+}
+#avis .slider article {
+  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   align-items: baseline;
   gap: 15px;
-  padding: 15px;
+  padding: 22px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+}
+@media (min-width: 768px) {
+  #avis .slider article {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+@media (min-width: 1025px) {
+  #avis .slider article {
+    flex: 0 1 400px;
+  }
 }
 #avis .comments {
   font-style: italic;
@@ -766,6 +793,11 @@ section .primary-color {
 }
 #avis .photo-profil {
   align-self: flex-start;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 #avis .text-profil {
   display: flex;
@@ -802,4 +834,70 @@ section .primary-color {
   border: 1px solid rgb(17, 88, 154);
   padding: 10px 20px;
   border-radius: 10px;
+}
+#avis .pagination {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+#avis .pagination li {
+  display: block;
+}
+@media (min-width: 768px) {
+  #avis .pagination li:nth-last-child(-n+1) {
+    display: none;
+  }
+}
+@media (min-width: 1025px) {
+  #avis .pagination li:nth-last-child(-n+2) {
+    display: none;
+  }
+}
+#avis .pagination-btn {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+#avis .pagination-btn::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  background: rgb(17, 88, 154);
+  opacity: 0.2;
+  border-radius: inherit;
+}
+#avis .active {
+  border-color: rgb(17, 88, 154);
+}
+#avis .active::after {
+  opacity: 1;
+}
+#avis .button-area {
+  margin: 30px 0;
+}
+#avis .button-area a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(17, 88, 154);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 16px 25px;
+  color: #fff;
+  width: 250px;
+  margin: auto;
+}
+#avis .button-area a:hover {
+  background-color: rgb(14, 72, 125);
 }/*# sourceMappingURL=style.css.map */
