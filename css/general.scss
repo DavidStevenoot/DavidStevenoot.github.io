@@ -1,3 +1,6 @@
+@import 'mixins';
+// @import 'variables';
+
 // reset
 * {
     padding: 0;
@@ -36,6 +39,25 @@ main {
     @include media(large) {
         justify-content: center;
     }
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 50%;
+    @include flex(center, row);
+    font-size: 25px;
+    color: $tertiary-color;
+    width: 50px;
+    height: 50px;
+    box-shadow: rgb(0 0 0 / 15%) 4px 4px 15px;
+}
+.btn-left {
+    left: -10px;
+}
+.btn-right {
+    right: -10px;
 }
 
 // pagination 
@@ -79,5 +101,15 @@ main {
     border-color: $primary-color;
     &::after {
         opacity: 1;
+    }
+}
+
+// buttons
+.button-area {
+    margin: 30px 0;
+    a {
+        @include button();
+        width: 250px;
+        margin: auto;
     }
 }
