@@ -38,7 +38,6 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   align-items: stretch;
   gap: 30px;
 }
@@ -136,7 +135,7 @@ main {
   font-weight: 600;
   padding: 16px 25px;
   color: #fff;
-  width: 250px;
+  width: 280px;
   margin: auto;
 }
 .button-area a:hover {
@@ -243,8 +242,6 @@ header {
   fill: #F29400;
 }
 .navbar-section .account-mob, .navbar-section .account-desktop {
-  font-family: "Source Sans Pro", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap") format("woff2");
   font-size: 25px;
   font-weight: 400;
   font-style: normal;
@@ -281,18 +278,16 @@ header {
 
 .sub-navbar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
-  flex-direction: column;
   position: absolute;
   bottom: 64px;
   left: 0;
   width: 100%;
   height: calc(100vh - 64px);
   background-color: #fff;
-  z-index: 1;
 }
 .sub-navbar--open {
   bottom: calc(-100vh + 64px);
@@ -307,8 +302,6 @@ header {
 }
 
 .navbar .nav-item, .navbar .dropdown-toggle {
-  font-family: "Source Sans Pro", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap") format("woff2");
   font-size: inherit;
   font-weight: 400;
   font-style: normal;
@@ -436,14 +429,12 @@ header {
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  gap: 10px;
-  text-decoration: none;
-  font-family: "Source Sans Pro", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap") format("woff2");
   font-size: 12px;
   font-weight: 400;
   font-style: normal;
   color: #fff;
+  gap: 10px;
+  text-decoration: none;
 }
 .navbar-contact .contact i {
   font-size: 35px;
@@ -455,6 +446,8 @@ section {
 }
 section h2 {
   font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
   color: rgb(3, 169, 245);
 }
 @media (min-width: 600px) {
@@ -464,13 +457,16 @@ section h2 {
 }
 section .subtitle {
   font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+  margin-top: 15px;
 }
 section .subtitle a {
   font-weight: 600;
 }
 @media (min-width: 600px) {
   section .subtitle {
-    margin-top: 15px;
     font-size: 18px;
   }
 }
@@ -489,6 +485,8 @@ section .primary-color {
 #recherche h1 {
   font-size: 26px;
   font-weight: 700;
+  font-style: normal;
+  color: #fff;
   max-width: 263px;
   margin: 10px auto;
 }
@@ -501,8 +499,10 @@ section .primary-color {
   }
 }
 #recherche p {
-  font-weight: 300;
   font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  color: #fff;
   margin: 0 auto;
 }
 #recherche p a {
@@ -545,9 +545,11 @@ section .primary-color {
   width: 55px;
   height: 55px;
   font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(17, 88, 154);
   border-radius: 0 10px 10px 0;
   background: #fff;
-  color: rgb(17, 88, 154);
 }
 #recherche .voitures {
   position: relative;
@@ -619,7 +621,6 @@ section .primary-color {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   align-items: baseline;
 }
 @media (min-width: 600px) {
@@ -629,8 +630,9 @@ section .primary-color {
 }
 #pourquoi .moyenne {
   font-size: 28px;
-  color: rgb(3, 169, 245);
   font-weight: 700;
+  font-style: normal;
+  color: rgb(3, 169, 245);
 }
 @media (min-width: 600px) {
   #pourquoi .moyenne {
@@ -711,8 +713,10 @@ section .primary-color {
   }
 }
 #pourquoi .text-raison h3 {
-  color: rgb(3, 169, 245);
   font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(3, 169, 245);
 }
 @media (min-width: 600px) {
   #pourquoi .text-raison h3 {
@@ -757,10 +761,14 @@ section .primary-color {
 }
 #pourquoi .text-occasion h3 {
   font-size: 26px;
+  font-weight: 400;
+  font-style: normal;
   color: rgb(17, 88, 154);
 }
 #pourquoi .text-occasion p {
   font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
   color: rgb(49, 49, 49);
 }
 @media (min-width: 1025px) {
@@ -772,22 +780,6 @@ section .primary-color {
     flex-wrap: wrap;
     gap: 18px;
   }
-}
-#pourquoi .btn-occasion a {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(17, 88, 154);
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 16px 25px;
-  color: #fff;
-}
-#pourquoi .btn-occasion a:hover {
-  background-color: rgb(14, 72, 125);
 }
 
 #offres .slider article {
@@ -811,7 +803,6 @@ section .primary-color {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 15px;
@@ -827,7 +818,6 @@ section .primary-color {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   align-items: baseline;
   gap: 15px;
   padding: 22px;
@@ -845,8 +835,9 @@ section .primary-color {
   }
 }
 #avis .comments {
-  font-style: italic;
   font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
   color: rgb(17, 88, 154);
 }
 #avis .signature {
@@ -875,14 +866,17 @@ section .primary-color {
 }
 #avis .name-profil {
   flex-basis: 100%;
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
   color: rgb(17, 88, 154);
 }
 #avis .adress-profil {
   flex-basis: 100%;
   font-size: 16px;
-  color: rgb(49, 49, 49);
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(17, 88, 154);
 }
 #avis .tags-profil {
   display: flex;
@@ -893,8 +887,9 @@ section .primary-color {
   flex-wrap: wrap;
 }
 #avis .tags-profil .tag-profil {
-  font-weight: 600;
   font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
   color: rgb(17, 88, 154);
   text-decoration: none;
   border: 1px solid rgb(17, 88, 154);
@@ -912,10 +907,9 @@ section .primary-color {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   gap: 15px;
   flex-wrap: wrap;
-  align-items: stretch;
 }
 #concessions .dealer-photo {
   width: 100%;
@@ -936,6 +930,7 @@ section .primary-color {
 #concessions .dealer-adress h3 {
   font-size: 18px;
   font-weight: 700;
+  font-style: normal;
   color: rgb(3, 169, 245);
 }
 @media (min-width: 600px) {
@@ -944,8 +939,9 @@ section .primary-color {
   }
 }
 #concessions .dealer-adress p {
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
   color: rgb(17, 88, 154);
   margin: 10px 0 10px;
 }
@@ -980,7 +976,7 @@ section .primary-color {
 #projet .slider {
   justify-content: flex-start;
 }
-@media (min-width: ) {
+@media (min-width: 715px) {
   #projet .slider {
     justify-content: center;
   }
@@ -994,9 +990,24 @@ section .primary-color {
 #projet article h3 {
   font-size: 18px;
   font-weight: 700;
+  font-style: normal;
   color: #fff;
-  background: rgb(17, 88, 154);
   padding: 15px;
+}
+#projet article:first-child h3 {
+  background: rgb(17, 88, 154);
+}
+#projet article:first-child i, #projet article:first-child h4 {
+  color: rgb(17, 88, 154);
+}
+#projet article:last-child {
+  border-color: rgb(3, 169, 245);
+}
+#projet article:last-child h3 {
+  background: rgb(3, 169, 245);
+}
+#projet article:last-child i, #projet article:last-child h4 {
+  color: rgb(3, 169, 245);
 }
 #projet .project-step {
   display: flex;
@@ -1006,14 +1017,12 @@ section .primary-color {
   padding: 15px;
 }
 #projet .project-step i {
-  flex: 1 1 15%;
+  flex: 1 1 20%;
   font-size: 38px;
-  color: rgb(17, 88, 154);
 }
 #projet .project-text {
-  flex: 1 1 85%;
+  flex: 1 1 80%;
 }
 #projet .project-text h4 {
-  color: rgb(17, 88, 154);
   margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '_mixins';
 // @import 'variables';
 
 // reset
@@ -33,8 +33,7 @@ main {
     margin: 50px 10px 0;
 }
 .slider {
-    @include flex(space-between, row);
-    align-items: stretch;
+    @include flex(row, space-between, stretch);
     gap: 30px;
     @include media(large) {
         justify-content: center;
@@ -46,7 +45,7 @@ main {
     transform: translateY(-50%);
     background: #fff;
     border-radius: 50%;
-    @include flex(center, row);
+    @include flex(row, center, center);
     font-size: 25px;
     color: $tertiary-color;
     width: 50px;
@@ -63,7 +62,7 @@ main {
 // pagination 
 .pagination {
     margin-top: 30px;
-    @include flex(center, row);
+    @include flex(row, center, center);
     gap: 15px;
     li {
         display: block;
@@ -109,7 +108,7 @@ main {
     margin: 30px 0;
     a {
         @include button();
-        width: 250px;
+        width: 280px;
         margin: auto;
     }
 }

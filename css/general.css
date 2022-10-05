@@ -37,7 +37,6 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   align-items: stretch;
   gap: 30px;
 }
@@ -135,7 +134,7 @@ main {
   font-weight: 600;
   padding: 16px 25px;
   color: #fff;
-  width: 250px;
+  width: 280px;
   margin: auto;
 }
 .button-area a:hover {

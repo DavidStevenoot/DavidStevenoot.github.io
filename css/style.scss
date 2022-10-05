@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 // mixins + variables
-@import 'variables';
-@import 'mixins';
+@import '_variables';
+@import '_mixins';
 
 // reset CSS et generalites
 @import 'general';
@@ -59,7 +59,7 @@ header {
     }
 }
 .overlayer {
-    @include flex(center, row);
+    @include flex(row, center, center);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -75,7 +75,7 @@ header {
     }
 }
 .navbar-section {
-    @include flex(space-between, row);
+    @include flex(row, space-between, center);
     @include gutter();
     position: relative;
     height: $navbar-height;
@@ -116,16 +116,14 @@ header {
 }
 
 .sub-navbar {
-    @include flex(space-between, row);
+    @include flex(column, space-between, center);
     @include transition(.3s);
-    flex-direction: column;
     position: absolute;
     bottom: $navbar-height;
     left: 0;
     width: 100%;
     height: calc(100vh - $navbar-height);
     background-color: #fff;
-    z-index: 1;
     &--open {
         bottom: calc(-100vh + $navbar-height);
     }
@@ -158,14 +156,14 @@ header {
 
 .nav-link {
     @include gutter();
-    @include flex(flex-start, row);
+    @include flex(row, flex-start, center);
     gap: 10px;
     height: 70px;
     text-decoration: none;
 }
 
 .nav-icon {
-    @include flex(center, row);
+    @include flex(row, center, center);
     width: 30px;
     height: 100%;
     i {
@@ -175,7 +173,7 @@ header {
 .dropdown-toggle {
     @include transition(.3s);
     @include gutter();
-    @include flex(space-between, row);
+    @include flex(row, space-between, center);
     text-decoration: none;
     .nav-link {
         padding: 0;
@@ -213,7 +211,7 @@ header {
         box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
         border-radius: $border-radius;
         .nav-item:not(.dropdown-toggle) {
-            @include flex(center, row);
+            @include flex(row, center, center);
             color: $tertiary-color;
             &:hover {
                 color: $tertiary-color;
@@ -230,13 +228,13 @@ header {
     width: 100%;
     height: 87px;
     background-color: $secondary-color;
-    @include flex(space-evenly, row);
+    @include flex(row, space-evenly, center);
     .contact {
-        @include flex(center, column);
+        @include flex(column, center, center);
         @include transition(.3s);
+        @include font-face( 12px, 400, normal, #fff );
         gap: 10px;
         text-decoration: none;
-        @include font-face( 12px, 400, normal, #fff );
         i {
             font-size: 35px;
         }
@@ -248,19 +246,18 @@ section {
     @include gutter();
     margin-bottom: 50px;
     h2 {
-        font-size: $title;
-        color: $secondary-color;
+        @include font-face( $title, 700, normal, $secondary-color );
         @include media(small) {
             font-size: 38px;
         }
     }
     .subtitle {
-        font-size: $subtitle;
+        @include font-face( $subtitle, 400, normal, #000 );
+        margin-top: 15px;
         a {
             font-weight: 600;
         }
         @include media(small) {
-            margin-top: 15px;
             font-size: 18px;
         }
     }
@@ -276,8 +273,7 @@ section {
         margin: 0 0 40px 0;
     }
     h1 {
-        font-size: 26px;
-        font-weight: 700;
+        @include font-face( 26px, 700, normal, #fff );
         max-width: 263px;
         margin: 10px auto;
         @include media(medium) {
@@ -286,8 +282,7 @@ section {
         }
     }
     p {
-        font-weight: 300;
-        font-size: 14px;
+        @include font-face( 14px, 300, normal, #fff );
         margin: 0 auto;
         a {
             font-weight: 500;
@@ -298,11 +293,11 @@ section {
         }
     }
     .search-form {
-        @include flex(center, row);
+        @include flex(row, center, center);
     }
     .input-group {
         @include transition(.3s);
-        @include flex(flex-start, row);
+        @include flex(row, flex-start, center);
         width: 100%;
         border-radius: $border-radius;
         max-width: 665px;
@@ -321,10 +316,9 @@ section {
     .search-button {
         width: 55px;
         height: 55px;
-        font-size: 25px;
+        @include font-face( 25px, 400, normal, $primary-color );
         border-radius: 0 $border-radius $border-radius 0;
         background: #fff;
-        color: $primary-color;
     }
     .voitures {
         position: relative;
@@ -357,10 +351,10 @@ section {
 
 #pourquoi {
     .avis {
-        @include flex(space-evenly, row);
+        @include flex(row, space-evenly, center);
         margin-top: 50px;
         article {
-            @include flex(center, row);
+            @include flex(row, center, center);
             gap: 10px;
         }
     }
@@ -376,16 +370,13 @@ section {
         color: #1877F2;
     }
     .avis-number {
-        @include flex(flex-start, column);
-        align-items: baseline;
+        @include flex(column, flex-start, baseline);
         @include media(small) {
             flex-direction: row;
         }
     }
     .moyenne {
-        font-size: 28px;
-        color: $secondary-color;
-        font-weight: 700;
+        @include font-face( 28px, 700, normal, $secondary-color );
         @include media(small) {
             font-size: 36px;
         }
@@ -397,7 +388,7 @@ section {
         }
     }
     .raisons {
-        @include flex(center, column);
+        @include flex(column, center, center);
         gap: 18px;
         margin-top: 50px;
         @include media(large) {
@@ -406,7 +397,7 @@ section {
         }
     }
     .choices, .controls, .satisfy {
-        @include flex(center, row);
+        @include flex(row, center, center);
         gap: 30px;
         @include media(large) {
             flex-wrap: wrap;
@@ -442,8 +433,7 @@ section {
             flex-basis: 100%;
         }
         h3 {
-            color: $secondary-color;
-            font-size: 18px;
+            @include font-face( 18px, 700, normal, $secondary-color );
             @include media(small) {
                 font-size: 24px;
             }
@@ -453,7 +443,7 @@ section {
         }
     }
     .occasion {
-        @include flex(center, row);
+        @include flex(row, center, center);
         flex-wrap: wrap;
         gap: 30px;
         margin-top: 50px;
@@ -480,22 +470,15 @@ section {
         display: none;
         flex-basis: calc(50% - 40px);
         h3 {
-            font-size: 26px;
-            color: $primary-color;
+            @include font-face( 26px, 400, normal, $primary-color );
         }
         p {
-            font-size: 16px;
-            color: $tertiary-color;
+            @include font-face( 16px, 400, normal, $tertiary-color );
         }
         @include media(large) {
-            @include flex(flex-start, row);
+            @include flex(row, flex-start, center);
             flex-wrap: wrap;
             gap: 18px;
-        }
-    }
-    .btn-occasion {
-        a {
-            @include button();
         }
     }
 }
@@ -520,8 +503,7 @@ section {
             z-index: -1;
         }
         a {
-            @include flex(flex-end, column);
-            align-items: flex-start;
+            @include flex(column, flex-end, flex-start);
             flex-wrap: wrap;
             gap: 15px;
             width: 100%;
@@ -536,8 +518,7 @@ section {
 #avis {
     article {
         flex: 0 0 100%;
-        @include flex(space-between, column);
-        align-items: baseline;
+        @include flex(column, space-between, baseline);
         gap: 15px;
         padding: 22px;
         box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
@@ -550,12 +531,10 @@ section {
         }
     }
     .comments {
-        font-style: italic;
-        font-size: 16px;
-        color: $primary-color;
+        @include font-face( 16px, 400, italic, $primary-color );
     }
     .signature {
-        @include flex(flex-start,row);
+        @include flex(row, flex-start, center);
         align-items: stretch;
         gap: 15px;
     }
@@ -567,29 +546,24 @@ section {
         border-radius: 50%;
     }
     .text-profil {
-        @include flex(space-between, row);
+        @include flex(row, space-between, center);
         flex-wrap: wrap;
         gap: 15px;
     }
     .name-profil {
         flex-basis: 100%;
-        font-weight: 700;
-        font-size: 18px;
-        color: $primary-color;
+        @include font-face( 18px, 700, normal, $primary-color );
     }
     .adress-profil {
         flex-basis: 100%;
-        font-size: 16px;
-        color: $tertiary-color;
+        @include font-face( 16px, 400, normal, $primary-color );
     }
     .tags-profil {
-        @include flex(flex-start, row);
+        @include flex(row, flex-start, center);
         gap: 15px;
         flex-wrap: wrap;
         .tag-profil {
-            font-weight: 600;
-            font-size: 12px;
-            color: $primary-color;
+            @include font-face( 12px, 600, normal, $primary-color );
             text-decoration: none;
             border: 1px solid $primary-color;
             padding: 10px 20px;
@@ -606,10 +580,9 @@ section {
     }
     .dealer-container {
         flex: 0 0 100%;
-        @include flex(flex-start, row);
+        @include flex(row, flex-start, stretch);
         gap: 15px;
         flex-wrap: wrap;
-        align-items: stretch;
     }
     .dealer-photo {
         width: 100%;
@@ -626,17 +599,13 @@ section {
     }
     .dealer-adress {
         h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: $secondary-color;
+            @include font-face( 18px, 700, normal, $secondary-color );
             @include media(small) {
                 font-size: 26px;
             }
         }
         p {
-            font-weight: 400;
-            font-size: 16px;
-            color: $primary-color;
+            @include font-face( 16px, 400, normal, $primary-color );
             margin: 10px 0 10px;
             @include media(small) {
                 font-size: 24px;
@@ -653,7 +622,7 @@ section {
         }
     }
     .dealer-planning {
-        @include flex(flex-start, row);
+        @include flex(row, flex-start, center);
         flex-wrap: wrap;
         gap: 10px;
         li {
@@ -665,7 +634,7 @@ section {
 #projet {
     .slider {
         justify-content: flex-start;
-        @include media(715px) {
+        @media (min-width: 715px) {
             justify-content: center;
         }
     }
@@ -675,26 +644,39 @@ section {
         overflow: hidden;
         flex: 0 0 320px;
         h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff;
-            background: $primary-color;
+            @include font-face( 18px, 700, normal, #fff );
             padding: 15px;
         }
     }
-    .project-step {
-        @include flex(flex-start, row);
-        padding: 15px;
-        i {
-            flex: 1 1 15%;
-            font-size: 38px;
+    article:first-child {
+        h3 {
+            background: $primary-color;
+        }
+        i, h4 {
             color: $primary-color;
         }
     }
+    article:last-child {
+        border-color: $secondary-color;
+        h3 {
+            background: $secondary-color;
+        }
+        i, h4 {
+            color: $secondary-color;
+        }
+    }
+    .project-step {
+        @include flex(row, flex-start, center);
+        padding: 15px;
+        i {
+            flex: 1 1 20%;
+            font-size: 38px;
+            
+        }
+    }
     .project-text {
-        flex: 1 1 85%;
+        flex: 1 1 80%;
         h4 {
-            color: $primary-color;
             margin-bottom: 10px;
         }
     }
