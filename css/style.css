@@ -1026,6 +1026,14 @@ section .primary-color {
   margin-bottom: 10px;
 }
 
+#blog .slider {
+  justify-content: flex-start;
+}
+@media (min-width: 768px) {
+  #blog .slider {
+    justify-content: center;
+  }
+}
 #blog article {
   flex: 0 0 285px;
 }
@@ -1082,4 +1090,54 @@ section .primary-color {
   font-style: normal;
   color: rgb(3, 169, 245);
   padding: 0 15px;
+}
+
+#populaire .etat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 50px;
+}
+#populaire .modele-btn input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+#populaire .modele-btn:first-child label {
+  border: 1px solid rgb(17, 88, 154);
+}
+#populaire .modele-btn:nth-child(2) label {
+  color: rgb(3, 169, 245);
+  border: 1px solid rgb(3, 169, 245);
+}
+#populaire .modele-btn:last-child label {
+  color: #F29400;
+  border: 1px solid #F29400;
+}
+#populaire .modele-btn label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(17, 88, 154);
+}
+#populaire .modele-btn input[type=radio]:checked ~ label {
+  color: #fff;
+}
+#populaire .modele-btn input[type=radio]:checked ~ #neuf-btn {
+  background: rgb(17, 88, 154);
+}
+#populaire .modele-btn input[type=radio]:checked ~ #occasion-btn {
+  background: rgb(3, 169, 245);
+}
+#populaire .modele-btn input[type=radio]:checked ~ #loa-btn {
+  background: #F29400;
 }/*# sourceMappingURL=style.css.map */

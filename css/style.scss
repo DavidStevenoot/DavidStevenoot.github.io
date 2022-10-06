@@ -51,7 +51,6 @@ header {
         }
     }
 }
-
 .navbar-desktop {
     display: none;
     @include media(large) {
@@ -114,7 +113,6 @@ header {
         }
     }
 }
-
 .sub-navbar {
     @include flex(column, space-between, center);
     @include transition(.3s);
@@ -153,14 +151,12 @@ header {
 .dropdown {
     position: relative;
 }
-
 .nav-link {
     @include gutter();
     @include flex(row, flex-start, center);
     gap: 10px;
     height: 70px;
 }
-
 .nav-icon {
     @include flex(row, center, center);
     width: 30px;
@@ -186,7 +182,6 @@ header {
         gap: 10px;
     }
 }
-
 .dropdown-menu {
     max-height: 0;
     overflow: hidden;
@@ -221,7 +216,6 @@ header {
         }
     }
 }
-
 .navbar-contact {
     width: 100%;
     height: 87px;
@@ -262,6 +256,7 @@ section {
         color: $primary-color;
     }
 }
+
 #recherche {
     color: #fff;
     background: linear-gradient(90deg, $primary-color, $secondary-color);
@@ -678,6 +673,12 @@ section {
 }
 
 #blog {
+    .slider {
+        justify-content: flex-start;
+        @include media(medium) {
+            justify-content: center;
+        }
+    }
     article {
         flex: 0 0 285px;
     }
@@ -719,5 +720,52 @@ section {
         align-self: flex-end;
         @include font-face( 16px, 700, normal, $secondary-color );
         padding: 0 15px;
+    }
+}
+
+#populaire {
+    .etat {
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 50px;
+    }
+    .modele-btn {
+        input[type=radio] {
+            position: absolute;
+            opacity: 0;
+        }
+        &:first-child label {
+            border: 1px solid $primary-color;
+        }
+        &:nth-child(2) label {
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+        &:last-child label {
+            color: #F29400;
+            border: 1px solid #F29400;
+        }
+        label {
+            @include flex(row, center, center);
+            width: 110px;
+            height: 40px;
+            border-radius: $border-radius;
+            @include font-face( 16px, 700, normal, $primary-color );
+        }
+        input[type=radio]:checked {
+            & ~ label {
+                color: #fff;
+            }
+            & ~ #neuf-btn {
+                background: $primary-color;
+            }
+            & ~ #occasion-btn {
+                background: $secondary-color;
+            }
+            & ~ #loa-btn {
+                background: #F29400;
+            }
+        }
     }
 }
