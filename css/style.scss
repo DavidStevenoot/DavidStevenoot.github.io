@@ -13,7 +13,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 @include media(large) {
     .navbar {
@@ -115,15 +115,14 @@ header {
 }
 .sub-navbar {
     @include flex(column, space-between, center);
-    @include transition(.3s);
+    @include transition(.4s);
     position: absolute;
-    bottom: $navbar-height;
-    left: 0;
     width: 100%;
-    height: calc(100vh - $navbar-height);
+    left: 0;
+    bottom: $navbar-height;
     background-color: #fff;
     &--open {
-        bottom: calc(-100vh + $navbar-height);
+        bottom: -100%;
     }
     nav {
         width: 100%;
