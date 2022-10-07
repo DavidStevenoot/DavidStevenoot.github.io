@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="navbar-section">
-            <button class="navbar-toggler" type="button">
+            <button class="navbar-toggler" name="hamburger" type="button">
                 <svg class="hamburger-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="200" height="30" rx="15"/>
                     <rect y="85" width="200" height="30" rx="15"/>
@@ -187,7 +187,7 @@
             <form action="" method="get" class="search-form">
                 <div class="input-group">
                     <input type="text" class="search-input" placeholder="Marque, modèle, année..." value="">
-                    <button type="button" class="search-button">
+                    <button type="button" name="search" class="search-button">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -258,8 +258,8 @@
             </div>
             <div class="occasion">
                 <div class="container-video">
-                    <div class="video-occasion">
-                        <iframe src="https://www.youtube.com/embed/S9QQ56JeHDI" title="Vous aussi, vous aurez raison avec Reezocar !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-occasion" data-embed="S9QQ56JeHDI">
+                        <div class="lazy-play-btn"></div>
                     </div>
                 </div>
                 <div class="text-occasion">
@@ -276,10 +276,10 @@
             <h2 class="text-center"><span class="primary-color">Les offres</span> du moment</h2>
             <p class="subtitle text-center">Profitez de prix réduits et des offres d'achat de véhicules les plus interessantes du marché.</p>
             <div class="slider-container">
-                <button class="slider-btn btn-left">
+                <button class="slider-btn btn-left" name="left button">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button class="slider-btn btn-right">
+                <button class="slider-btn btn-right" name="right button">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 <div class="slider">
@@ -376,13 +376,13 @@
             </div>
             <ul class="pagination">
                 <li>
-                    <button type="button" class="pagination-btn active"></button>
+                    <button type="button" class="pagination-btn active" name="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn"></button>
+                    <button type="button" class="pagination-btn" name="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn"></button>
+                    <button type="button" class="pagination-btn" name="pagination slider"></button>
                 </li>
             </ul>
             <div class="button-area">
@@ -441,10 +441,10 @@
             </div>
             <ul class="pagination">
                 <li>
-                    <button type="button" class="pagination-btn active"></button>
+                    <button type="button" class="pagination-btn active" name="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn"></button>
+                    <button type="button" class="pagination-btn" name="pagination slider"></button>
                 </li>
             </ul>
             <div class="button-area">
@@ -576,10 +576,10 @@
             </div>
             <div class="marques">
                 <div class="slider-container">
-                    <button class="slider-btn btn-left">
+                    <button class="slider-btn btn-left" name="left button">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button class="slider-btn btn-right">
+                    <button class="slider-btn btn-right" name="right button">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                     <div class="slider">

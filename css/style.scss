@@ -454,12 +454,46 @@ section {
         width: 100%;
         border-radius: $border-radius;
         overflow: hidden;
-        iframe {
+        & img {
+            width: 100%;
+            top: -16.82%;
+            left: 0;
+            opacity: 1;
+        }
+        & .lazy-play-btn {
+            width: 90px;
+            height: 60px;
+            background-color: #333;
+            box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+            z-index: 1;
+            opacity: 0.8;
+            border-radius: 6px;
+        }
+        & .lazy-play-btn:before {
+            content: "";
+            border-style: solid;
+            border-width: 15px 0 15px 26.0px;
+            border-color: transparent transparent transparent #fff;
+        }
+        & img,
+        & .lazy-play-btn {
+            cursor: pointer;
+        }
+        & img,
+        & iframe,
+        & .lazy-play-btn,
+        & .lazy-play-btn:before {
             position: absolute;
+        }
+        & .lazy-play-btn,
+        & .lazy-play-btn:before {
+            top: 50%;
+            left: 50%;
+            transform: translate3d( -50%, -50%, 0 );
+        }
+        iframe {
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
             width: 100%;
             height: 100%;
         }
