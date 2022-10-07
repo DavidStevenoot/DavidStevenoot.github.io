@@ -257,8 +257,10 @@
                 </article>
             </div>
             <div class="occasion">
-                <div class="video-occasion">
-                    <iframe src="https://www.youtube.com/embed/k2MeFUu0Gho" title="Toutes les occasions sont bonnes avec Reezocar !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen scrolling="no"></iframe>
+                <div class="container-video">
+                    <div class="video-occasion">
+                        <iframe src="https://www.youtube.com/embed/S9QQ56JeHDI" title="Vous aussi, vous aurez raison avec Reezocar !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="text-occasion">
                     <h3>Toutes les occasions sont bonnes avec Reezocar</h3>
@@ -560,45 +562,69 @@
             <p class="subtitle text-center">Les modèles les plus demandés par nos clients, parcourez le catalogue des constructeurs automobile.</p>
             <div class="etat">
                 <div class="modele-btn">
-                    <input type="radio" id="neuf" name="modele">
-                    <label for="neuf" id="neuf-btn">Neuf/0km</label>
+                    <input type="radio" id="neuf" name="state">
+                    <label for="neuf" id="neuf-btn" class="state-label">Neuf/0km</label>
                 </div>
                 <div class="modele-btn">
-                    <input type="radio" id="occasion" name="modele">
-                    <label for="occasion" id="occasion-btn">Occasion</label>
+                    <input type="radio" id="occasion" name="state">
+                    <label for="occasion" id="occasion-btn" class="state-label">Occasion</label>
                 </div>
                 <div class="modele-btn">
-                    <input type="radio" id="loa" name="modele">
-                    <label for="loa" id="loa-btn">LOA</label>
+                    <input type="radio" id="loa" name="state">
+                    <label for="loa" id="loa-btn" class="state-label">LOA</label>
                 </div>
             </div>
             <div class="marques">
                 <div class="slider-container">
+                    <button class="slider-btn btn-left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn btn-right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                     <div class="slider">
-                        <button class="marque">
-                            <img src="img/audi.png" alt="logo audi" class="logo-marque">
-                            <span class="nom-marque">Audi</span>
-                        </button>
-                        <button class="marque">
-                            <img src="img/bmw.png" alt="logo bmw" class="logo-marque">
-                            <span class="nom-marque">BMW</span>
-                        </button>
-                        <button class="marque">
-                            <img src="img/citroen.png" alt="logo citroen" class="logo-marque">
-                            <span class="nom-marque">Citroën</span>
-                        </button>
-                        <button class="marque">
-                            <img src="img/mercedes.png" alt="logo mercedes benz" class="logo-marque">
-                            <span class="nom-marque">Mercedes-Benz</span>
-                        </button>
-                        <button class="marque">
-                            <img src="img/peugeot.png" alt="logo peugeot" class="logo-marque">
-                            <span class="nom-marque">Peugeot</span>
-                        </button>
-                        <button class="marque">
-                            <img src="img/renault.png" alt="logo renault" class="logo-marque">
-                            <span class="nom-marque">Renault</span>
-                        </button>
+                        <div class="marque">
+                            <input type="radio" id="audi" name="marque">
+                            <label for="audi" id="audi-btn" class="marque-label">
+                                <img src="img/audi.png" alt="logo audi" class="logo-marque">
+                                Audi
+                            </label>
+                        </div>
+                        <div class="marque">
+                            <input type="radio" id="bmw" name="marque">
+                            <label for="bmw" id="bmw-btn" class="marque-label">
+                                <img src="img/bmw.png" alt="logo bmw" class="logo-marque">
+                                BMW
+                            </label>
+                        </div>
+                        <div class="marque">
+                            <input type="radio" id="citroen" name="marque">
+                            <label for="citroen" id="citroen-btn" class="marque-label">
+                                <img src="img/citroen.png" alt="logo citroen" class="logo-marque">
+                                Citroën
+                            </label>
+                        </div>
+                        <div class="marque">
+                            <input type="radio" id="mercedes" name="marque">
+                            <label for="mercedes" id="mercedes-btn" class="marque-label">
+                                <img src="img/mercedes.png" alt="logo mercedes" class="logo-marque">
+                                Mercedes-Benz
+                            </label>
+                        </div>
+                        <div class="marque">
+                            <input type="radio" id="peugeot" name="marque">
+                            <label for="peugeot" id="peugeot-btn" class="marque-label">
+                                <img src="img/peugeot.png" alt="logo peugeot" class="logo-marque">
+                                Peugeot
+                            </label>
+                        </div>
+                        <div class="marque">
+                            <input type="radio" id="renault" name="marque">
+                            <label for="renault" id="renault-btn" class="marque-label">
+                                <img src="img/renault.png" alt="logo renault" class="logo-marque">
+                                Renault
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -397,7 +397,7 @@ header {
     max-height: -moz-max-content;
     max-height: max-content;
     background-color: #fff;
-    box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
   }
   .dropdown-menu .nav-item:not(.dropdown-toggle) {
@@ -532,7 +532,7 @@ section .primary-color {
   max-width: 665px;
 }
 #recherche .input-group:focus-within {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 }
 #recherche .search-input {
   font-size: 14px;
@@ -731,16 +731,25 @@ section .primary-color {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 50px;
 }
+#pourquoi .container-video {
+  flex-basis: 100%;
+  height: 100%;
+}
+@media (min-width: 1025px) {
+  #pourquoi .container-video {
+    flex-basis: 50%;
+  }
+}
 #pourquoi .video-occasion {
   position: relative;
   height: 0;
-  padding-bottom: 28.12%;
-  flex-basis: 100%;
+  padding-bottom: 56.25%;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -748,17 +757,16 @@ section .primary-color {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-}
-@media (min-width: 1025px) {
-  #pourquoi .video-occasion {
-    flex-basis: 50%;
-  }
 }
 #pourquoi .text-occasion {
   display: none;
   flex-basis: calc(50% - 40px);
+  flex-wrap: wrap;
+  gap: 18px;
 }
 #pourquoi .text-occasion h3 {
   font-size: 26px;
@@ -778,8 +786,6 @@ section .primary-color {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
   }
 }
 
@@ -787,7 +793,7 @@ section .primary-color {
   position: relative;
   flex: 1 0 300px;
   height: 400px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   overflow: hidden;
   z-index: -1;
@@ -1042,14 +1048,18 @@ section .primary-color {
   flex-direction: row;
   justify-content: flex-start;
   align-items: baseline;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   flex-wrap: wrap;
   gap: 15px;
   padding: 0 0 15px 0;
-  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+}
+#blog .blog:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.35);
 }
 #blog .photo-blog {
   width: 100%;
@@ -1101,7 +1111,7 @@ section .primary-color {
   gap: 15px;
   margin-top: 50px;
 }
-#populaire .modele-btn input[type=radio] {
+#populaire input[type=radio] {
   position: absolute;
   opacity: 0;
 }
@@ -1116,11 +1126,12 @@ section .primary-color {
   color: #F29400;
   border: 1px solid #F29400;
 }
-#populaire .modele-btn label {
+#populaire label {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 110px;
   height: 40px;
   border-radius: 10px;
@@ -1129,15 +1140,40 @@ section .primary-color {
   font-style: normal;
   color: rgb(17, 88, 154);
 }
-#populaire .modele-btn input[type=radio]:checked ~ label {
+#populaire input[type=radio]:checked ~ .state-label {
   color: #fff;
 }
-#populaire .modele-btn input[type=radio]:checked ~ #neuf-btn {
+#populaire input[type=radio]:checked ~ #neuf-btn {
   background: rgb(17, 88, 154);
 }
-#populaire .modele-btn input[type=radio]:checked ~ #occasion-btn {
+#populaire input[type=radio]:checked ~ #occasion-btn {
   background: rgb(3, 169, 245);
 }
-#populaire .modele-btn input[type=radio]:checked ~ #loa-btn {
+#populaire input[type=radio]:checked ~ #loa-btn {
   background: #F29400;
+}
+#populaire .marque {
+  flex: 0 0 133px;
+  height: 104px;
+}
+#populaire .marque .marque-label {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid #DCDCDC;
+  border-radius: 6px;
+  color: rgb(49, 49, 49);
+  transition: all 0.3s ease;
+}
+#populaire .marque .marque-label:hover {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+}
+#populaire .marque input[type=radio]:checked ~ .marque-label {
+  box-shadow: rgba(0, 0, 0, 0.35) 4px 4px 15px;
+  border-color: rgb(17, 88, 154);
+}
+#populaire .logo-marque {
+  max-width: 90px;
+  max-height: 50px;
 }/*# sourceMappingURL=style.css.map */

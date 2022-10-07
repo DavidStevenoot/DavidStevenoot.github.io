@@ -18,6 +18,12 @@
 @mixin transition($duration) {
     transition: all $duration ease;
 }
+@mixin boxShadow($color) {
+    box-shadow: 4px 4px 15px rgba($color,.15);
+    &:hover {
+        box-shadow: 4px 4px 15px rgba($color,.35);
+    }
+}
 @mixin button {
     @include flex(row, center, center);
     background-color: $primary-color;

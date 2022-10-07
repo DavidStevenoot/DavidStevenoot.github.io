@@ -201,7 +201,7 @@ header {
         width: 170px;
         max-height: max-content;
         background-color: #fff;
-        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+        box-shadow: $boxShadow;
         border-radius: $border-radius;
         .nav-item:not(.dropdown-toggle) {
             @include flex(row, center, center);
@@ -294,7 +294,7 @@ section {
         border-radius: $border-radius;
         max-width: 665px;
         &:focus-within {
-            box-shadow: rgb(0 0 0 / 50%) 0px 4px 15px;
+            box-shadow: $boxShadow;
         }
     }
     .search-input {
@@ -435,32 +435,40 @@ section {
         }
     }
     .occasion {
-        @include flex(row, center, center);
+        @include flex(row, center, flex-start);
         flex-wrap: wrap;
         gap: 30px;
         margin-top: 50px;
     }
+    .container-video {
+        flex-basis: 100%;
+        height: 100%;
+        @include media(large) {
+            flex-basis: 50%;
+        }
+    }
     .video-occasion {
         position: relative;
         height: 0;
-        padding-bottom: 28.12%;
-        flex-basis: 100%;
+        padding-bottom: 56.25%;
+        width: 100%;
         border-radius: $border-radius;
         overflow: hidden;
         iframe {
             position: absolute;
             top: 0;
             left: 0;
+            bottom: 0;
+            right: 0;
             width: 100%;
             height: 100%;
-        }
-        @include media(large) {
-            flex-basis: 50%;
         }
     }
     .text-occasion {
         display: none;
         flex-basis: calc(50% - 40px);
+        flex-wrap: wrap;
+        gap: 18px;
         h3 {
             @include font-face( 26px, 400, normal, $primary-color );
         }
@@ -469,8 +477,6 @@ section {
         }
         @include media(large) {
             @include flex(row, flex-start, center);
-            flex-wrap: wrap;
-            gap: 18px;
         }
     }
 }
@@ -481,7 +487,7 @@ section {
             position: relative;
             flex: 1 0 300px;
             height: 400px;
-            box-shadow: rgb(0 0 0 / 30%) 0px 0px 10px;
+            box-shadow: $boxShadow;
             border-radius: $border-radius;
             overflow: hidden;
             z-index: -1;
@@ -512,7 +518,7 @@ section {
         @include flex(column, space-between, baseline);
         gap: 15px;
         padding: 22px;
-        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: $boxShadow;
         border-radius: $border-radius;
         @include media(medium) {
             flex: 0 0 calc(50% - 15px);
@@ -684,10 +690,11 @@ section {
     }
     .blog {
         @include flex(row, flex-start, baseline);
+        @include boxShadow(#000);
+        @include transition(.3s);
         flex-wrap: wrap;
         gap: 15px;
         padding: 0 0 15px 0;
-        box-shadow: 4px 4px 15px 0px #00000026;
         height: 100%;
         border-radius: $border-radius;
         overflow: hidden;
@@ -730,11 +737,11 @@ section {
         gap: 15px;
         margin-top: 50px;
     }
+    input[type=radio] {
+        position: absolute;
+        opacity: 0;
+    }
     .modele-btn {
-        input[type=radio] {
-            position: absolute;
-            opacity: 0;
-        }
         &:first-child label {
             border: 1px solid $primary-color;
         }
@@ -746,26 +753,53 @@ section {
             color: #F29400;
             border: 1px solid #F29400;
         }
-        label {
-            @include flex(row, center, center);
-            width: 110px;
-            height: 40px;
-            border-radius: $border-radius;
-            @include font-face( 16px, 700, normal, $primary-color );
+    }
+    label {
+        @include flex(column, center, center);
+        flex-wrap: wrap;
+        width: 110px;
+        height: 40px;
+        border-radius: $border-radius;
+        @include font-face( 16px, 700, normal, $primary-color );
+    }
+    input[type=radio]:checked {
+        & ~ .state-label {
+            color: #fff;
         }
-        input[type=radio]:checked {
-            & ~ label {
-                color: #fff;
-            }
-            & ~ #neuf-btn {
-                background: $primary-color;
-            }
-            & ~ #occasion-btn {
-                background: $secondary-color;
-            }
-            & ~ #loa-btn {
-                background: #F29400;
+        & ~ #neuf-btn {
+            background: $primary-color;
+        }
+        & ~ #occasion-btn {
+            background: $secondary-color;
+        }
+        & ~ #loa-btn {
+            background: #F29400;
+        }
+    }
+
+    .marque {
+        flex: 0 0 133px;
+        height: 104px;
+        .marque-label {
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+            gap: 10px;
+            border: 1px solid #DCDCDC;
+            border-radius: 6px;
+            color: $tertiary-color;
+            @include transition(.3s);
+            &:hover {
+                box-shadow: $boxShadow;
             }
         }
+        & input[type=radio]:checked ~ .marque-label {
+            box-shadow: rgb(0 0 0 / 35%) 4px 4px 15px;
+            border-color: $primary-color;
+        }
+    }
+    .logo-marque {
+        max-width: 90px;
+        max-height: 50px;
     }
 }
