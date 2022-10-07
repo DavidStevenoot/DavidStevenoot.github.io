@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="navbar-section">
-            <button class="navbar-toggler" name="hamburger" type="button">
+            <button class="navbar-toggler" aria-label="hamburger" type="button">
                 <svg class="hamburger-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="200" height="30" rx="15"/>
                     <rect y="85" width="200" height="30" rx="15"/>
@@ -169,7 +169,7 @@
                     </a>
                 </div>
             </div>
-            <a class="account-mob" href="#">
+            <a class="account-mob" href="#">aria
                 <i class="fa-regular fa-user"></i>
             </a>
             <a class="account-desktop" href="#">
@@ -187,7 +187,7 @@
             <form action="" method="get" class="search-form">
                 <div class="input-group">
                     <input type="text" class="search-input" placeholder="Marque, modèle, année..." value="">
-                    <button type="button" name="search" class="search-button">
+                    <button type="button" aria-label="search" class="search-button">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -276,10 +276,10 @@
             <h2 class="text-center"><span class="primary-color">Les offres</span> du moment</h2>
             <p class="subtitle text-center">Profitez de prix réduits et des offres d'achat de véhicules les plus interessantes du marché.</p>
             <div class="slider-container">
-                <button class="slider-btn btn-left" name="left button">
+                <button class="slider-btn btn-left" aria-label="left button">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button class="slider-btn btn-right" name="right button">
+                <button class="slider-btn btn-right" aria-label="right button">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 <div class="slider">
@@ -355,7 +355,8 @@
                                 <p class="name-profil">Catalina C,</p>
                                 <p class="adress-profil">(93250) Villemomble</p>
                                 <div class="tags-profil">
-                                    <a href="#" class="tag-profil">Mercedes GLE AMG</a>                              </div>
+                                    <a href="#" class="tag-profil">Mercedes GLE AMG</a>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -376,13 +377,13 @@
             </div>
             <ul class="pagination">
                 <li>
-                    <button type="button" class="pagination-btn active" name="pagination slider"></button>
+                    <button type="button" class="pagination-btn active" aria-label="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn" name="pagination slider"></button>
+                    <button type="button" class="pagination-btn" aria-label="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn" name="pagination slider"></button>
+                    <button type="button" class="pagination-btn" aria-label="pagination slider"></button>
                 </li>
             </ul>
             <div class="button-area">
@@ -441,10 +442,10 @@
             </div>
             <ul class="pagination">
                 <li>
-                    <button type="button" class="pagination-btn active" name="pagination slider"></button>
+                    <button type="button" class="pagination-btn active" aria-label="pagination slider"></button>
                 </li>
                 <li>
-                    <button type="button" class="pagination-btn" name="pagination slider"></button>
+                    <button type="button" class="pagination-btn" aria-label="pagination slider"></button>
                 </li>
             </ul>
             <div class="button-area">
@@ -576,10 +577,10 @@
             </div>
             <div class="marques">
                 <div class="slider-container">
-                    <button class="slider-btn btn-left" name="left button">
+                    <button class="slider-btn btn-left" aria-label="left button">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button class="slider-btn btn-right" name="right button">
+                    <button class="slider-btn btn-right" aria-label="right button">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                     <div class="slider">
@@ -644,6 +645,6 @@
 
         </footer>
     </main>
-    <script src="js/script.js" async></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
