@@ -100,8 +100,8 @@ main {
 
 .pagination-btn {
   position: relative;
-  width: 26px;
-  height: 26px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid #fff;
 }
@@ -288,12 +288,13 @@ header {
   transition: all 0.4s ease;
   position: absolute;
   width: 100%;
+  height: calc(100vh - 64px);
   left: 0;
   bottom: 64px;
   background-color: #fff;
 }
 .sub-navbar--open {
-  bottom: -100%;
+  bottom: calc(-100vh + 64px);
 }
 .sub-navbar nav {
   width: 100%;
@@ -1181,7 +1182,7 @@ section .primary-color {
   background: #F29400;
 }
 #populaire .marque {
-  flex: 0 0 133px;
+  flex: 0 0 134px;
   height: 104px;
 }
 #populaire .marque .marque-label {
@@ -1204,4 +1205,33 @@ section .primary-color {
 #populaire .logo-marque {
   max-width: 90px;
   max-height: 50px;
+}
+#populaire .modeles {
+  border-radius: 10px;
+  overflow: hidden;
+}
+#populaire .modeles .slider {
+  gap: 0;
+  justify-content: flex-start;
+}
+#populaire .modele {
+  flex: 0 0 149px;
+  height: 130px;
+}
+#populaire .modele-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background: rgba(17, 88, 154, 0.05);
+  width: 100%;
+  height: 100%;
+}
+#populaire .modele-link:hover {
+  background: rgba(17, 88, 154, 0.2);
+}
+#populaire .modele-name {
+  font-size: 14px;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */

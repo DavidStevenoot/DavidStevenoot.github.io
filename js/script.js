@@ -45,6 +45,7 @@ dropdown.forEach(function (e) {
 		var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
 		var image = new Image();
         image.src = source;
+        image.alt = "video youtube";
         image.addEventListener( "load", function() {
             youtube[ i ].appendChild( image );
         }( i ) );
@@ -57,6 +58,6 @@ dropdown.forEach(function (e) {
 
             this.innerHTML = "";
             this.appendChild( iframe );
-        } );	
+        } );
 	};
 } )();
