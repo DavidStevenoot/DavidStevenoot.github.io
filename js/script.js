@@ -25,16 +25,17 @@ hamburgerLogo = document.querySelector(".hamburger-logo");
 // }
     
 // toggle "nos agences"
-const   dropdown = document.querySelectorAll(".dropdown");
+const   dropdownToggle = document.querySelectorAll(".dropdown-toggle");
 
-dropdown.forEach(function (e) {
+dropdownToggle.forEach(function (e) {
     e.addEventListener('click', event => {
-        const   dropdownMenu = event.target.closest(".dropdown").querySelector('.dropdown-menu'),
-                arrow = event.target.closest(".dropdown").querySelector('.fa-chevron-down')
+        const   dropdown = event.target.closest(".dropdown-container").querySelector('.dropdown'),
+        arrow = event.target.closest(".dropdown-container").querySelector('.arrow');
+
         // ouvrir dropdown
-        dropdownMenu.classList.toggle("dropdown-menu--open");
+        dropdown.classList.toggle("dropdown--open");
         // toggle arrow
-        arrow.classList.toggle("fa-chevron-down--open");
+        arrow.classList.toggle("arrow--open");
     })
 });
 

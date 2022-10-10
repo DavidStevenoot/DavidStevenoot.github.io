@@ -133,23 +133,16 @@ header {
     }
 }
 .navbar {
-    .nav-item, .dropdown-toggle {
+    .nav-item {
         @include font-face( inherit, 400, normal, $primary-color );
         @include transition(.3s);
-        &:not(.dropdown-toggle):hover {
-            background: $primary-color;
-            color: #fff;
-        }
         @include media(large) {
             color: #fff;
-            &:not(.dropdown-toggle):hover {
-                background: none;
-            }
         }
     }
-}
-.dropdown {
-    position: relative;
+    .dropdown--open {
+        max-height: 140px;
+    }
 }
 .nav-link {
     @include gutter();
@@ -163,57 +156,6 @@ header {
     height: 100%;
     i {
         font-size: 24px;
-    }
-}
-.dropdown-toggle {
-    @include transition(.3s);
-    @include gutter();
-    @include flex(row, space-between, center);
-    .nav-link {
-        padding: 0;
-    }
-    .fa-chevron-down {
-        @include transition(.3s);
-        &--open {
-            transform: rotate(180deg);
-        }
-    }
-    @include media(large) {
-        gap: 10px;
-    }
-}
-.dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    @include transition(.4s);
-    .nav-link {
-        height: 50px;
-    }
-    &--open {
-        max-height: 100px;
-    }
-    @include media(large) {
-        position: absolute;
-        bottom: -100px;
-        left: -10px;
-        opacity: 0;
-        overflow: visible;
-        width: 170px;
-        max-height: max-content;
-        background-color: #fff;
-        box-shadow: $boxShadow;
-        border-radius: $border-radius;
-        .nav-item:not(.dropdown-toggle) {
-            @include flex(row, center, center);
-            color: $tertiary-color;
-            &:hover {
-                color: $tertiary-color;
-                font-weight: 600;
-            }
-        }
-        &--open {
-            opacity: 1;
-        }
     }
 }
 .navbar-contact {
@@ -233,7 +175,7 @@ header {
 }
 
 // section
-section {
+section, footer {
     @include gutter();
     margin-bottom: 50px;
     h2 {
@@ -929,5 +871,57 @@ section {
         p {
             color: $secondary-color;
         }
+    }
+}
+
+footer {
+    .logo-footer {
+        margin: 20px 0 40px;
+    }
+    .list-group {
+        margin: 0 -20px;
+    }
+    .list-group-item {
+        font-size: 16px;
+        font-weight: 600;
+        height: 66px;
+        border-bottom: 1px solid #E5E5E5;
+        &-language {
+            height: auto;
+        }
+        a {
+            padding: 10px $gutter;
+        }
+    }
+    a, .language-container {
+        @include flex(row, flex-start, center);
+        height: 100%;
+    }
+    .language-flag, .list-flag {
+        width: 28px;
+    }
+    .dropdown-container {
+        height: inherit;
+    }
+    .dropdown-toggle {
+        padding: 10px $gutter;
+        gap: 10px;
+    }
+    .dropdown-toggle, .list-language {
+        button {
+            @include flex(row, flex-start, center);
+            gap: 10px;
+            width: 100%;
+            height: 44px;
+            text-align: left;
+            padding: 0 $gutter;
+        }
+    }
+    .dropdown--open {
+        max-height: 176px;
+    }
+
+    .social-icons {
+        margin: 30px 0 0;
     }
 }

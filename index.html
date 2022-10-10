@@ -51,20 +51,21 @@
             </a>
             <nav class="navbar-desktop">
                 <ul class="navbar">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#">
-                            <div class="nav-link">
-                                Nos agences
-                            </div>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a class="nav-link dropdown-item" href="#">
+                    <li class="nav-item dropdown-container">
+                        <button class="dropdown-toggle">
+                            Nos agences<i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+                        <ul class="dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-item" href="#">
                                 Agence Paris
-                            </a></li>
-                            <li class="nav-item"><a class="nav-link dropdown-item" href="#">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-item" href="#">
                                 Agence Lille-Seclin
-                            </a></li>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -95,17 +96,17 @@
                                 Accueil
                             </a>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#">
+                        <li class="nav-item dropdown-container">
+                            <button class="dropdown-toggle">
                                 <div class="nav-link">
                                     <div class="nav-icon">
                                         <i class="fa-solid fa-location-dot"></i>
                                     </div>
                                     Nos agences
                                 </div>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </button>
+                            <ul class="dropdown">
                                 <li class="nav-item"><a class="nav-link dropdown-item" href="#">
                                     <div class="nav-icon"></div>
                                     Agence Paris
@@ -740,12 +741,64 @@
                 </div>
             </div>
         </section>
-        <section id="faq">
-            <h2 class="text-center"><span class="primary-color">Foire aux</span> questions</h2>
-            <p class="subtitle text-center">Vous vous posez encore des questions ? C'est normal ! Nous avons des réponses, laissez-nous vous guider.</p>
-        </section>
         <footer>
-
+            <p class="subtitle">Reezocar est une filiale de la Société Générale</p>
+            <img src="img/logo-sg.webp" alt="logo société générale" class="logo-footer">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Ultrices lacus</a></li>
+                <li class="list-group-item"><a href="#">Diam malesuada fringilla</a></li>
+                <li class="list-group-item"><a href="#">Cursus etiam dui</a></li>
+                <li class="list-group-item"><a href="#">Urna, nunc accumsan amet</a></li>
+                <li class="list-group-item"><a href="#">Congue bibendum</a></li>
+                <li class="list-group-item list-group-item-language">
+                    <div class="dropdown-container">
+                        <button class="dropdown-toggle">
+                            Langues : <svg class="language-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h640v480H0z"></path><path fill="#00267f" d="M0 0h213.3v480H0z"></path><path fill="#f31830" d="M426.7 0H640v480H426.7z"></path></g></svg>
+                            <span class="list-language">Français</span>
+                        </button>
+                        <ul class="dropdown">
+                            <li class="list-language">
+                                <button>
+                                    <svg class="list-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h640v480H0z"></path><path fill="#00267f" d="M0 0h213.3v480H0z"></path><path fill="#f31830" d="M426.7 0H640v480H426.7z"></path></g></svg>
+                                    <span class="list-language">Reezocar.com - Français</span>
+                                </button>
+                            </li>
+                            <li class="list-language">
+                                <button>
+                                    <svg class="list-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><defs><clipPath id="a"><path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z"></path></clipPath></defs><g clip-path="url(#a)" transform="translate(80) scale(.94)"><g stroke-width="1pt"><path fill="#012169" d="M-256 0H768v512H-256z"></path><path fill="#fff" d="M-256 0v57.2L653.5 512H768v-57.2L-141.5 0H-256zM768 0v57.2L-141.5 512H-256v-57.2L653.5 0H768z"></path><path fill="#fff" d="M170.7 0v512h170.6V0H170.7zM-256 170.7v170.6H768V170.7H-256z"></path><path fill="#c8102e" d="M-256 204.8v102.4H768V204.8H-256zM204.8 0v512h102.4V0H204.8zM-256 512L85.3 341.3h76.4L-179.7 512H-256zm0-512L85.3 170.7H9L-256 38.2V0zm606.4 170.7L691.7 0H768L426.7 170.7h-76.3zM768 512L426.7 341.3H503l265 132.5V512z"></path></g></g></svg>
+                                    <span class="list-language">Reezocar.com - English</span>
+                                </button>
+                            </li>
+                            <li class="list-language">
+                                <button>
+                                    <svg class="list-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><g fill-rule="evenodd" stroke-width="1pt"><path d="M0 0h213.3v480H0z"></path><path fill="#ffd90c" d="M213.3 0h213.4v480H213.3z"></path><path fill="#f31830" d="M426.7 0H640v480H426.7z"></path></g></svg>
+                                    <span class="list-language">Reezocar.be - Dutch</span>
+                                </button>
+                            </li>
+                            <li class="list-language">
+                                <button>
+                                    <svg class="list-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h640v480H0z"></path><path fill="#00267f" d="M0 0h213.3v480H0z"></path><path fill="#f31830" d="M426.7 0H640v480H426.7z"></path></g></svg>
+                                    <span class="list-language">Reezocar.be - Français</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="social-icons">
+                <a class="social-icon social-icon--facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a class="social-icon social-icon--twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a class="social-icon social-icon--pinterest">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+                <a class="social-icon social-icon--instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
         </footer>
     </main>
     <script src="js/script.js" defer></script>
