@@ -444,7 +444,7 @@ section {
         flex-basis: 100%;
         height: 100%;
         @include media(large) {
-            flex-basis: 50%;
+            flex-basis: 40%;
         }
     }
     .video-occasion {
@@ -500,7 +500,7 @@ section {
     }
     .text-occasion {
         display: none;
-        flex-basis: calc(50% - 40px);
+        flex-basis: 40%;
         flex-wrap: wrap;
         gap: 18px;
         h3 {
@@ -862,5 +862,72 @@ section {
     .modele-name {
         font-size: 14px;
         font-weight: 600;
+    }
+
+    .populaire-text {
+        font-size: 16px;
+        color: $primary-color;
+        a {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    }
+}
+
+#contact {
+    .container {
+        @include media(small) {
+            max-width: 570px;
+            margin: 0 auto;
+        }
+        p {
+            font-size: 14px;
+            @include media(small) {
+                font-size: 18px;
+            }
+        }
+    }
+    .slider-container {
+        width: 75%;
+        margin: 20px auto;
+    }
+    .slider {
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    .slider-btn {
+        box-shadow: none;
+        width: 30px;
+        height: 30px;
+    }
+    .btn-left {
+        left: -30px;
+    }
+    .btn-right {
+        right: -30px;
+    }
+    .contact-profil {
+        @include flex(row, center, center);
+        flex: 0 0 100%;
+        gap: 15px;
+        @include media(small) {
+            font-size: 18px;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            @include media(small) {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        h3 {
+            color: $primary-color;
+        }
+        p {
+            color: $secondary-color;
+        }
     }
 }

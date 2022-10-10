@@ -33,6 +33,12 @@ main {
   overflow: hidden;
 }
 
+.container {
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+}
+
 .slider-container {
   position: relative;
   margin: 50px 10px 0;
@@ -135,11 +141,12 @@ main {
   background-color: rgb(17, 88, 154);
   transition: all 0.3s ease;
   border-radius: 10px;
+  text-align: center;
   text-decoration: none;
   font-weight: 600;
   padding: 16px 25px;
   color: #fff;
-  width: 280px;
+  max-width: 280px;
   margin: auto;
 }
 .button-area a:hover {
@@ -264,6 +271,7 @@ header {
   background-color: rgb(17, 88, 154);
   transition: all 0.3s ease;
   border-radius: 10px;
+  text-align: center;
   text-decoration: none;
   font-weight: 600;
   padding: 16px 25px;
@@ -742,7 +750,7 @@ section .primary-color {
 }
 @media (min-width: 1025px) {
   #pourquoi .container-video {
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
 }
 #pourquoi .video-occasion {
@@ -793,7 +801,7 @@ section .primary-color {
 }
 #pourquoi .text-occasion {
   display: none;
-  flex-basis: calc(50% - 40px);
+  flex-basis: 40%;
   flex-wrap: wrap;
   gap: 18px;
 }
@@ -1234,4 +1242,78 @@ section .primary-color {
 #populaire .modele-name {
   font-size: 14px;
   font-weight: 600;
+}
+#populaire .populaire-text {
+  font-size: 16px;
+  color: rgb(17, 88, 154);
+}
+#populaire .populaire-text a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  #contact .container {
+    max-width: 570px;
+    margin: 0 auto;
+  }
+}
+#contact .container p {
+  font-size: 14px;
+}
+@media (min-width: 600px) {
+  #contact .container p {
+    font-size: 18px;
+  }
+}
+#contact .slider-container {
+  width: 75%;
+  margin: 20px auto;
+}
+#contact .slider {
+  justify-content: flex-start;
+  overflow: hidden;
+}
+#contact .slider-btn {
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+}
+#contact .btn-left {
+  left: -30px;
+}
+#contact .btn-right {
+  right: -30px;
+}
+#contact .contact-profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  gap: 15px;
+}
+@media (min-width: 600px) {
+  #contact .contact-profil {
+    font-size: 18px;
+  }
+}
+#contact .contact-profil img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 600px) {
+  #contact .contact-profil img {
+    width: 150px;
+    height: 150px;
+  }
+}
+#contact .contact-profil h3 {
+  color: rgb(17, 88, 154);
+}
+#contact .contact-profil p {
+  color: rgb(3, 169, 245);
 }/*# sourceMappingURL=style.css.map */
