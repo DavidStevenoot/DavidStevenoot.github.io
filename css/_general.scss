@@ -16,6 +16,7 @@ ol, ul {
 	list-style: none;
 }
 button {
+    font-family: 'Source Sans Pro', sans-serif;
     cursor: pointer;
     background: none;
 }
@@ -41,13 +42,6 @@ main {
     position: relative;
     margin: 50px 10px 0;
 }
-.slider {
-    @include flex(row, space-between, stretch);
-    gap: 30px;
-    @include media(large) {
-        justify-content: center;
-    }
-}
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -66,6 +60,10 @@ main {
 }
 .btn-right {
     right: -10px;
+}
+.slider {
+    @include flex(row, space-between, stretch);
+    gap: 30px;
 }
 
 // pagination 
@@ -142,19 +140,9 @@ main {
     height: 100%;
     text-align: left;
 }
-
-// social medias
-.social-icons {
-    @include flex(row, center, center);
-    gap: 15px;
-}
-.social-icon {
-    @include flex(row, center, center);
-    flex: 0 0 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: $tertiary-color;
-    color: #fff;
-    font-size: 1.2rem;
-    transition: all 0.15s ease;
+.arrow {
+    @include transition(.3s);
+    &--open {
+        transform: rotate(180deg);
+    }
 }

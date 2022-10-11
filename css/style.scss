@@ -14,18 +14,12 @@ header {
     top: 0;
     width: 100%;
     z-index: 2;
-}
-@include media(large) {
-    .navbar {
-        display: flex;
+    .navbar-toggler {
+        @include media(large){
+            display: none;
+        }
+        z-index: 1;
     }
-}
-.navbar-toggler {
-    @include media(large){
-        display: none;
-    }
-    background: none;
-    z-index: 1;
     .hamburger-logo {
         width: 20px;
         height: 20px;
@@ -34,147 +28,125 @@ header {
             transform-origin: center;
             fill: rgb(255, 255, 255);
         }
-    } 
-    .hamburger-logo--open {
-        rect {
-            fill: #000;
-        }
-        rect:nth-child(1) {
-            transform: rotate(135deg) translate(0%,40%);
-        }
-        rect:nth-child(2) {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        rect:nth-child(3) {
-            transform: rotate(-135deg) translate(-0%,-40%);
-        }
-    }
-}
-.navbar-desktop {
-    display: none;
-    @include media(large) {
-        display: block;
-    }
-}
-.overlayer {
-    @include flex(row, center, center);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: none;
-    &--open {
-        display: flex;
-    }
-    @include media(large) {
-        display: none;
-    }
-}
-.navbar-section {
-    @include flex(row, space-between, center);
-    @include gutter();
-    position: relative;
-    height: $navbar-height;
-    background: linear-gradient(to right, rgb(17, 88, 154), rgb(3, 169, 245));
-    z-index: 2;
-    .reezocar-logo {
-        width: 236px;
-        height: 33px;
-    }
-    .reezocar-logo--close {
-        path {
-            fill: #fff;
+        &--open {
+            rect {
+                fill: #000;
+            }
+            rect:nth-child(1) {
+                transform: rotate(135deg) translate(0%,40%);
+            }
+            rect:nth-child(2) {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            rect:nth-child(3) {
+                transform: rotate(-135deg) translate(-0%,-40%);
+            }
         }
     }
-    .reezocar-logo--open {
-        path {
-            fill: #313131;
+    .navbar-mobile {
+        @include flex(row, center, baseline);
+        @include transition(.4s);
+        flex-wrap: wrap;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: -700px;
+        background-color: #fff;
+        &--open {
+            top: 0;
         }
-        path:nth-last-child(-n+2) {
-            fill: #F29400;
+        nav {
+            width: 100%;
         }
-    }
-    .account-mob {
-        @include font-face( 25px, 400, normal, #fff );
         @include media(large) {
             display: none;
         }
     }
-    .account-desktop {
-        @extend .account-mob;
-        @include button;
+    .navbar-desktop {
         display: none;
-        font-size: 14px;
+        @include media(large) {
+            display: block;
+        }
+    }
+    .navbar-section {
+        @include flex(row, space-between, center);
+        @include gutter();
+        position: relative;
+        height: $navbar-height;
+        background: linear-gradient(to right, rgb(17, 88, 154), rgb(3, 169, 245));
+        z-index: 2;
+        .reezocar-logo {
+            width: 236px;
+            height: $navbar-height;
+        }
+        .account-mob {
+            @include font-face( 25px, 400, normal, #fff );
+            @include media(large) {
+                display: none;
+            }
+        }
+        .account-desktop {
+            @extend .account-mob;
+            @include button;
+            display: none;
+            font-size: 14px;
+            @include media(large) {
+                display: flex;
+            }
+        }
+    }
+    
+    .navbar {
+        .nav-item {
+            @include transition(.3s);
+            @include media(large) {
+                color: #fff;
+            }
+        }
+        .nav-link {
+            @include font-face( inherit, 400, normal, $primary-color );
+            font-size: 16px;
+            @include gutter();
+            @include flex(row, flex-start, center);
+            gap: 10px;
+            height: $navbar-height;
+        }
+        .nav-icon {
+            @include flex(row, center, center);
+            width: 30px;
+            height: 100%;
+            i {
+                font-size: 24px;
+            }
+        }
+        .dropdown--open {
+            max-height: 140px;
+        }
         @include media(large) {
             display: flex;
         }
     }
-}
-.sub-navbar {
-    @include flex(column, space-between, center);
-    @include transition(.4s);
-    position: absolute;
-    width: 100%;
-    height: calc(100vh - $navbar-height);
-    left: 0;
-    bottom: $navbar-height;
-    background-color: #fff;
-    &--open {
-        bottom: calc(-100vh + $navbar-height);
-    }
-    nav {
+    .navbar-contact {
         width: 100%;
-    }
-    @include media(large) {
-        display: none;
-    }
-}
-.navbar {
-    .nav-item {
-        @include font-face( inherit, 400, normal, $primary-color );
-        @include transition(.3s);
-        @include media(large) {
-            color: #fff;
-        }
-    }
-    .dropdown--open {
-        max-height: 140px;
-    }
-}
-.nav-link {
-    @include gutter();
-    @include flex(row, flex-start, center);
-    gap: 10px;
-    height: 70px;
-}
-.nav-icon {
-    @include flex(row, center, center);
-    width: 30px;
-    height: 100%;
-    i {
-        font-size: 24px;
-    }
-}
-.navbar-contact {
-    width: 100%;
-    height: 87px;
-    background-color: $secondary-color;
-    @include flex(row, space-evenly, center);
-    .contact {
-        @include flex(column, center, center);
-        @include transition(.3s);
-        @include font-face( 12px, 400, normal, #fff );
-        gap: 10px;
-        i {
-            font-size: 35px;
+        height: 87px;
+        margin-top: 50px;
+        background-color: $secondary-color;
+        align-self: flex-end;
+        @include flex(row, space-evenly, center);
+        .contact {
+            @include flex(column, center, center);
+            @include transition(.3s);
+            @include font-face( 12px, 400, normal, #fff );
+            gap: 10px;
+            i {
+                font-size: 35px;
+            }
         }
     }
 }
 
-// section
+// ---------------------------- section ----------------------------
 section, footer {
     @include gutter();
     margin-bottom: 50px;
@@ -199,6 +171,7 @@ section, footer {
     }
 }
 
+// recherche
 #recherche {
     color: #fff;
     background: linear-gradient(90deg, $primary-color, $secondary-color);
@@ -283,6 +256,7 @@ section, footer {
     }
 }
 
+// pourquoi
 #pourquoi {
     .avis {
         @include flex(row, space-evenly, center);
@@ -457,6 +431,7 @@ section, footer {
     }
 }
 
+// offres
 #offres {
     .slider {
         article {
@@ -488,7 +463,13 @@ section, footer {
     }
 }
 
+// avis
 #avis {
+    .slider {
+        @include media(large) {
+            justify-content: center;
+        }
+    }
     article {
         flex: 0 0 100%;
         @include flex(column, space-between, baseline);
@@ -544,6 +525,7 @@ section, footer {
     }
 }
 
+// concessions
 #concessions {
     .slider {
         @include media(large) {
@@ -603,6 +585,7 @@ section, footer {
     }
 }
 
+// projet
 #projet {
     .slider {
         justify-content: flex-start;
@@ -654,6 +637,7 @@ section, footer {
     }
 }
 
+// blog
 #blog {
     .slider {
         justify-content: flex-start;
@@ -706,6 +690,7 @@ section, footer {
     }
 }
 
+// populaire
 #populaire {
     .etat {
         @include flex(row, center, center);
@@ -753,6 +738,11 @@ section, footer {
         }
     }
 
+    .slider {
+        @include media(large) {
+            justify-content: center;
+        }
+    }
     .marque {
         flex: 0 0 134px;
         height: 104px;
@@ -816,6 +806,7 @@ section, footer {
     }
 }
 
+// contact
 #contact {
     .container {
         @include media(small) {
@@ -874,6 +865,7 @@ section, footer {
     }
 }
 
+// ---------------------------- footer ----------------------------
 footer {
     .logo-footer {
         margin: 20px 0 40px;
@@ -922,6 +914,22 @@ footer {
     }
 
     .social-icons {
-        margin: 30px 0 0;
+        @include flex(row, center, center);
+        gap: 15px;
+        margin: 30px 0 30px;
+    }
+    .social-icon {
+        @include flex(row, center, center);
+        flex: 0 0 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $tertiary-color;
+        color: #fff;
+        font-size: 1.2rem;
+        transition: all 0.15s ease;
+    }
+
+    .mentions {
+        color: rgba(170, 170, 170, 1);
     }
 }

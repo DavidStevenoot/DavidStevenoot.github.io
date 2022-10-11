@@ -1,18 +1,14 @@
 // navbar
-// toggle hamburger
 const   hamburger = document.querySelector(".navbar-toggler"),
-subNavbar = document.querySelector(".sub-navbar"),
-overLayer = document.querySelector(".overlayer"),
+navbarMob = document.querySelector(".navbar-mobile"),
 hamburgerLogo = document.querySelector(".hamburger-logo");
 
 // if (window.matchMedia("(max-width: 1024px)").matches) {
     hamburger.addEventListener('click', event => {
-        // déplacer la layout supérieure
-        overLayer.classList.toggle("overlayer--open");
         // animation hamburger
         hamburgerLogo.classList.toggle("hamburger-logo--open");
         // toggle navbar
-        subNavbar.classList.toggle("sub-navbar--open");
+        navbarMob.classList.toggle("navbar-mobile--open");
         // fermer la dropdown et basculer la flèche a la fermeture de la navbar
         // let dropdownOpen = dropdownMenu.classList.contains('dropdown-menu--open') ? true : false;
         // let arrowOpen = arrow.classList.contains('fa-chevron-down--open') ? true : false;
@@ -31,11 +27,15 @@ dropdownToggle.forEach(function (e) {
     e.addEventListener('click', event => {
         const   dropdown = event.target.closest(".dropdown-container").querySelector('.dropdown'),
         arrow = event.target.closest(".dropdown-container").querySelector('.arrow');
-
+        
         // ouvrir dropdown
         dropdown.classList.toggle("dropdown--open");
         // toggle arrow
-        arrow.classList.toggle("arrow--open");
+        if (document.body.contains(arrow) == true) {
+            arrow.classList.toggle("arrow--open");
+        } else {
+            return false;
+        }
     })
 });
 
