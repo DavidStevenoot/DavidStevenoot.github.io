@@ -297,11 +297,8 @@ section, footer {
         margin-top: 50px;
     }
     .container-video {
-        flex-basis: 100%;
+        flex: 0 1 580px;
         height: 100%;
-        @include media(large) {
-            flex-basis: 40%;
-        }
     }
     .video-occasion {
         position: relative;

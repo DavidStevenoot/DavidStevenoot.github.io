@@ -568,13 +568,8 @@ section .primary-color, footer .primary-color {
   margin-top: 50px;
 }
 #pourquoi .container-video {
-  flex-basis: 100%;
+  flex: 0 1 580px;
   height: 100%;
-}
-@media (min-width: 1025px) {
-  #pourquoi .container-video {
-    flex-basis: 40%;
-  }
 }
 #pourquoi .video-occasion {
   position: relative;
