@@ -1,26 +1,28 @@
 // navbar
-const   hamburger = document.querySelector(".navbar-toggler"),
+const   hamburger = document.querySelector(".navbar-toggle"),
 navbarMob = document.querySelector(".navbar-mobile"),
 hamburgerLogo = document.querySelector(".hamburger-logo");
 
 // if (window.matchMedia("(max-width: 1024px)").matches) {
-    hamburger.addEventListener('click', event => {
-        // animation hamburger
-        hamburgerLogo.classList.toggle("hamburger-logo--open");
-        // toggle navbar
-        navbarMob.classList.toggle("navbar-mobile--open");
-        // fermer la dropdown et basculer la flèche a la fermeture de la navbar
-        // let dropdownOpen = dropdownMenu.classList.contains('dropdown-menu--open') ? true : false;
-        // let arrowOpen = arrow.classList.contains('fa-chevron-down--open') ? true : false;
-        // console.log(dropdownOpen)
-        // if (dropdownOpen == true && arrowOpen == true) {
-            //     dropdownMenu.classList.remove("dropdown-menu--open");
-            //     arrow.classList.remove("fa-chevron-down--open");
-            // }
-    });
+hamburger.addEventListener('click', event => {
+    const   dropdown = document.querySelector('.dropdown'),
+            arrow = document.querySelector('.arrow');
+    // animation hamburger
+    hamburgerLogo.classList.toggle("hamburger-logo--open");
+    // toggle navbar
+    navbarMob.classList.toggle("navbar-mobile--open");
+    // fermer la dropdown et basculer la flèche a la fermeture de la navbar
+    let dropdownOpen = dropdown.classList.contains('dropdown--open') ? true : false;
+    let arrowOpen = arrow.classList.contains('arrow--open') ? true : false;
+    console.log(dropdownOpen)
+    if (dropdownOpen == true && arrowOpen == true) {
+        dropdown.classList.remove("dropdown--open");
+        arrow.classList.remove("arrow--open");
+    }
+});
 // }
     
-// toggle "nos agences"
+// toggle dropdown
 const   dropdownToggle = document.querySelectorAll(".dropdown-toggle");
 
 dropdownToggle.forEach(function (e) {

@@ -9,141 +9,81 @@
 @import 'general';
 
 // ---------------------------- navbar ----------------------------
-header {
+.navbar {
+    @include flex(row, space-between, center);
+    @include gutter;
     position: fixed;
     top: 0;
     width: 100%;
+    height: $navbar-height;
     z-index: 2;
-    .navbar-toggler {
-        @include media(large){
-            display: none;
-        }
-        z-index: 1;
+    .navbar-toggle {
+        position: relative;
+        z-index: 2;
     }
     .hamburger-logo {
         width: 20px;
         height: 20px;
         rect {
-            @include transition(.6s);
-            transform-origin: center;
-            fill: rgb(255, 255, 255);
+            fill: $tertiary-color;
+            @include transition(.3s);
         }
         &--open {
             rect {
-                fill: #000;
+                transform-origin: center;
             }
             rect:nth-child(1) {
-                transform: rotate(135deg) translate(0%,40%);
+                transform: rotate(135deg) translate(0%, 40%);
             }
             rect:nth-child(2) {
                 transform: translateX(100%);
                 opacity: 0;
             }
             rect:nth-child(3) {
-                transform: rotate(-135deg) translate(-0%,-40%);
+                transform: rotate(-135deg) translate(0%, -40%);
             }
         }
     }
-    .navbar-mobile {
-        @include flex(row, center, baseline);
-        @include transition(.4s);
-        flex-wrap: wrap;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: -700px;
-        background-color: #fff;
-        &--open {
-            top: 0;
-        }
-        nav {
-            width: 100%;
-        }
-        @include media(large) {
-            display: none;
-        }
-    }
-    .navbar-desktop {
-        display: none;
-        @include media(large) {
-            display: block;
-        }
-    }
-    .navbar-section {
-        @include flex(row, space-between, center);
-        @include gutter();
-        position: relative;
+    .reezocar-logo {
+        width: 180px;
         height: $navbar-height;
-        background: linear-gradient(to right, rgb(17, 88, 154), rgb(3, 169, 245));
-        z-index: 2;
-        .reezocar-logo {
-            width: 236px;
-            height: $navbar-height;
-        }
-        .account-mob {
-            @include font-face( 25px, 400, normal, #fff );
-            @include media(large) {
-                display: none;
-            }
-        }
-        .account-desktop {
-            @extend .account-mob;
-            @include button;
-            display: none;
-            font-size: 14px;
-            @include media(large) {
-                display: flex;
-            }
-        }
     }
-    
-    .navbar {
-        .nav-item {
-            @include transition(.3s);
-            @include media(large) {
+    &-mobile {
+        @include transition(.4s);
+        position: absolute;
+        top: -512px;
+        left: 0;
+        width: 100%;
+        .brand {
+            @include flex(row, center, center);
+            width: 100%;
+            background: #fff;
+        }
+        .navbar-link, .dropdown-toggle, .dropdown-agency {
+            @include flex(row, flex-start, center);
+            @include gutter;
+            @include font-face(16px, 400, normal, $tertiary-color);
+            @include transition(.2s);
+            gap: 15px;
+            height: $navbar-height;
+            width: 100%;
+            background: #fff;
+            &:hover {
+                background: $primary-color;
                 color: #fff;
             }
         }
-        .nav-link {
-            @include font-face( inherit, 400, normal, $primary-color );
-            font-size: 16px;
-            @include gutter();
-            @include flex(row, flex-start, center);
-            gap: 10px;
-            height: $navbar-height;
-        }
-        .nav-icon {
-            @include flex(row, center, center);
-            width: 30px;
-            height: 100%;
-            i {
-                font-size: 24px;
-            }
-        }
         .dropdown--open {
-            max-height: 140px;
+            max-height: 80px;
         }
-        @include media(large) {
-            display: flex;
+        .dropdown-agency {
+            height: 40px;
         }
-    }
-    .navbar-contact {
-        width: 100%;
-        height: 87px;
-        margin-top: 50px;
-        background-color: $secondary-color;
-        align-self: flex-end;
-        @include flex(row, space-evenly, center);
-        .contact {
-            @include flex(column, center, center);
-            @include transition(.3s);
-            @include font-face( 12px, 400, normal, #fff );
-            gap: 10px;
-            i {
-                font-size: 35px;
-            }
+        &--open {
+            top: 0;
         }
     }
+    
 }
 
 // ---------------------------- section ----------------------------
